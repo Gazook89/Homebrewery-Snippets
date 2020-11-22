@@ -1,0 +1,26 @@
+/* -----  Setting up page spread ----- */
+/* ----------------------------------- */
+
+
+.brewRenderer {
+  transform:scale(calc(1/var(--zoom)));
+  transform-origin:top left;
+  overflow: unset !important;
+}
+
+.pages {
+  display:grid;
+  width:calc(100%*var(--zoom));
+  height:calc(98%*var(--zoom));
+  overflow-y: scroll;
+  margin-top:5px !important;
+  grid-template-columns: repeat(auto-fill, 816px);
+  column-gap:20px;
+  row-gap:20px;
+  justify-content: center;
+}
+
+.pages:before {
+  content:'';
+  display:var(--book);
+}

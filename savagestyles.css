@@ -1,0 +1,979 @@
+  @import url('https://fonts.googleapis.com/css2?family=Enriqueta:wght@700&family=Rock+Salt&family=Rock+Salt&family=Nanum+Pen+Script&display=swap');
+
+/* 
+
+░██████╗░██╗░░░░░░░██╗░█████╗░██████╗░███████╗
+██╔════╝░██║░░██╗░░██║██╔══██╗██╔══██╗██╔════╝
+╚█████╗░░╚██╗████╗██╔╝███████║██║░░██║█████╗░░
+░╚═══██╗░░████╔═████║░██╔══██║██║░░██║██╔══╝░░
+██████╔╝░░╚██╔╝░╚██╔╝░██║░░██║██████╔╝███████╗
+╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝╚═════╝░╚══════╝
+
+░██████╗████████╗██╗░░░██╗██╗░░░░░███████╗░██████╗██╗░░██╗███████╗███████╗████████╗
+██╔════╝╚══██╔══╝╚██╗░██╔╝██║░░░░░██╔════╝██╔════╝██║░░██║██╔════╝██╔════╝╚══██╔══╝
+╚█████╗░░░░██║░░░░╚████╔╝░██║░░░░░█████╗░░╚█████╗░███████║█████╗░░█████╗░░░░░██║░░░
+░╚═══██╗░░░██║░░░░░╚██╔╝░░██║░░░░░██╔══╝░░░╚═══██╗██╔══██║██╔══╝░░██╔══╝░░░░░██║░░░
+██████╔╝░░░██║░░░░░░██║░░░███████╗███████╗██████╔╝██║░░██║███████╗███████╗░░░██║░░░
+╚═════╝░░░░╚═╝░░░░░░╚═╝░░░╚══════╝╚══════╝╚═════╝░╚═╝░░╚═╝╚══════╝╚══════╝░░░╚═╝░░░
+  
+🄱🅈 🄶🄰🅉🄾🄾🄺
+  
+This stylesheet is developed for the Homebrewery to bring some alternative complete styling for brews.  Hopefully this helps those that want to brew for something other than DnD 5e.  But my biggest hope is to illustrate what can be done in Homebrewery when taking a harder look at Markdown, HTML, and especially CSS.  I have made an attempt to stick as close to Markdown as possible and not rely too much on alternate on HTML methods, which means a lot of weird CSS stuff (multi-section tables, I'm looking at you). 
+  
+The CSS is organized a little bit.  If you see ROOT VARIABLES, it means those properties can be changed easily or have some explanation.  Otherwise, the rest is up to you to figure out.  
+  
+The last page of the brew is HIDDEN from the preview, and contains CSS that is not SWADE specific.  Feel free to look at it though and use what you can, it's mostly for the book-style display and fancy preview background.  */
+  
+/* =============================== */
+/* ------- PAGE ADJUSTMENTS ------ */
+/* =============================== */
+  
+  .phb:after {
+  	display:none;
+  }
+  
+
+  
+/* ----- Folded Paper Shadows ----- */ 
+/* -------------------------------- */
+  
+  .phb:nth-of-type(2n+1):before {
+  	content:'';
+  	position:absolute;
+  	width:0;
+  	height:100%;
+  	top:0;
+  	left:0;
+  	z-index:500;
+  	box-shadow:0 0 35px 10px black;
+  }
+  
+  .phb:nth-of-type(2n):before {
+  	content:'';
+  	position:absolute;
+  	width:0;
+  	height:100%;
+  	top:0;
+  	right:0;
+  	z-index:500;
+  	box-shadow:0 0 35px 10px black;
+  }
+ 
+/* ----- Background white overlay ----- */ 
+/* ------------------------------------ */
+
+  .sw.pg:before {
+  	content:'';
+  	position:absolute;
+  	width:90%;
+  	height:90%;
+  	background:#ffffffa6;
+  	top:5%;
+  	left:5%;
+  	z-index:-1;
+  	box-shadow:0 0 40px 30px #ffffffa6;
+  }
+  
+/* ----- SWADE LOGO ----- */
+/* ---------------------- */
+  
+  .sw #fan-content {
+  	position:absolute;
+  	width:130px;
+  	top:50px;
+  	right:30px;
+  	transform:rotate(20deg);
+  	z-index:100;
+  	filter:drop-shadow(2px 2px 1px gray);
+  	transition:transform .2s;
+  }
+  
+  .sw #fan-content:hover {
+  	transform:rotate(20deg) scale(1.05);
+  }
+  
+/* ----- DROP SHADOW ----- */
+/* ----------------------- */ 
+  
+  .sw .dropshadow {
+  	filter:drop-shadow(2px 2px 6px gray)
+  }
+  
+/* =============================== */
+/* ------------ HEADERS ---------- */
+/* =============================== */
+  
+  .sw h1,.sw h2,.sw h3,.sw h4,.sw h5, .sw blockquote h4 em {
+  	text-transform:uppercase;
+  	font-family:'impact';
+  }
+  
+/* ------ H1 Chapter Headings ------ */
+/* --------------------------------- */
+/* - Big half page graphic headers - */
+/* --------------------------------- */
+  
+      /* ############## */
+      /* ROOT VARIABLES */
+      /* ############## */ 
+  
+  :root {
+  	--splashy-text-color:hotpink;
+  	--splashy-shadow-color:yellow;
+  	--splashy-font:'rock salt'
+  	
+  }
+  
+  .sw .chapter-head {
+  	position:relative;
+  	top:-30px;
+  	height:340px;
+  	column-span:all;
+  	background-image:url('https://i.imgur.com/hnGXqZP.png');
+  	background-size:cover;
+  	padding-top:50px;
+  	padding-bottom:50px;
+  }
+  
+.sw .chapter-head h1 {
+  	color:black;
+  	font-size:96px;
+  	text-align:center;
+  	height: 100px;
+    width: 108%;
+    margin-left: -4%;
+    padding-top: 30px;
+    margin-bottom: -10px;
+    margin-top: 0;
+  }
+  
+.sw .chapter-head h1::after {
+	content: '';
+	display: block;
+	position: relative;
+	background: url('https://i.imgur.com/FQsK0NF.png');
+	background-size: contain;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	margin: auto auto;
+	height: 1em;
+	width: 90%;
+	bottom: .8em;
+	z-index: 3;
+}
+  
+  .sw .chapter-head p {
+  	color:maroon;
+  	font-size:32px;
+  	border:none;
+  	position:relative;
+  	font-family:impact;
+  	text-transform:uppercase;
+  	background:ed;
+  	width:90%;
+  	margin:auto auto !important;
+  	line-height:1em;
+  	padding:10px 0;
+  	text-align:center;
+  	top:.6em;
+  }
+  
+  .sw .chapter-head.top p:last-of-type {
+  	top:-3em;
+  }
+  
+  .sw .chapter-head.right p:last-of-type {
+  	text-align:right;
+  }
+  
+  .sw .chapter-head.bottom p:last-of-type {
+  	top:.6em;
+  }
+  
+  .sw .chapter-head.left p:last-of-type {
+  	text-align:left;
+  }
+  
+  .sw .chapter-head p:first-of-type {
+  	top:20px;
+  	text-align:left;
+  	transform:rotate(-15deg);
+  	transform-origin:25%;
+  	font-family:var(--splashy-font);
+  	text-transform:unset;
+  	color:maroon;
+  }
+  
+  .sw .chapter-head h1 + p:first-letter {
+  	font-family:inherit;
+  	float:unset;
+  	font-size:unset;
+  	color:unset;
+  }
+  
+  .sw .chapter-head.splashy.bottom p {
+  	transform:translateY(20px)
+  }
+  
+  .sw .chapter-head.splashy p:first-of-type {
+  	top:130px;
+  	line-height:.4em;
+  	transform:scalex(1.8) translatex(-10%);
+  	font-size:3em;
+  	text-align:center;
+  	
+  }
+  
+  .sw .chapter-head.shadow p:first-of-type {
+  font-weight:700;
+  	text-shadow:
+       3px 5px 2px var(--splashy-shadow-color),
+     -1px -1px 0 var(--splashy-shadow-color),  
+      1px -1px 0 var(--splashy-shadow-color),
+      -1px 1px 0 var(--splashy-shadow-color),
+       1px 1px 0 var(--splashy-shadow-color);
+  	
+  }
+  
+  .sw .chapter-bg {
+  	position:absolute;
+  height:380px;
+  	width:660px;
+  	top:0px;
+  	left:0px;
+  	background:url('https://i.imgur.com/q03i8K7.png');
+  	background-size:100% 100%;
+  	background-repeat:norepeat;
+  	transform:rotate(-3deg);
+  	z-index:-1;
+  }
+  
+  .sw .chapter-head img {
+  	position:relative;
+  	width:750px;
+  	left:-45px;
+  	top:-20px;
+  	mask-image:url('https://i.imgur.com/bpMq3XN.png');
+  	mask-size:100%;
+  	-webkit-mask-image:url('https://i.imgur.com/bpMq3XN.png');
+  	-webkit-mask-size:100%;
+  }
+  
+/* ------------ H2 ---------- */
+/* -------------------------- */
+  
+  .sw h2 {
+  	height:100px;
+  	width:108%;
+  	margin-left:-4%;
+  	padding-top:30px;
+  	margin-top:0;
+  	font-size:2.6em;
+  	text-align:center;
+  	color:#920B12;
+    background:url('https://i.imgur.com/mzLTyEh.png');
+  	background-position:center;
+  	background-size:contain;
+  	background-repeat:no-repeat;
+  	position:relative;
+  	z-index:500;
+  }
+  
+  .sw h2:first-child {
+  	margin-top:-.3em;
+  }
+  
+  .sw h2::after {
+    content: '';
+    display: block;
+    position: relative;
+    background: url('https://i.imgur.com/FQsK0NF.png');
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: repeat-x;
+    margin: auto auto;
+    height: 1em;
+    width: 90%;
+    bottom: .8em;
+    z-index: 3;
+  }
+  
+  .sw .wide h2 {
+  	background-size:100% 100px;
+  	width:110%;
+  	margin-left:-5%;
+  	z-index:500 
+  }
+  
+  .sw h2 + p {
+  	margin-top:-1.1em;
+  	
+  }
+  
+/* ------------ H3 ---------- */
+/* -------------------------- */
+  
+      /* ############## */
+      /* ROOT VARIABLES */
+      /* ############## */ 
+  
+  :root {
+  	--wild-card-indicator-icon: url('https://i.imgur.com/bYx8Bt9.png');
+  	
+  }
+  
+  .sw h3, .sw blockquote h3 {
+  	color:black;
+  	border-color:black;
+  	margin-bottom:.3em;
+  }
+  
+  .sw h3 strong {
+  	font-weight:unset;
+  	letter-spacing:unset;
+  }
+
+  .sw h3 strong::before {
+	content: '';
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background: var(--wild-card-indicator-icon);
+  	background-size:contain;
+  	filter:brightness(0%);
+	top: 0;
+	left: 0;
+  	margin-right:3px;
+  	transform:rotate(-45deg) scale(1.3);
+  }
+  
+/* ------------ H4 ---------- */
+/* -------------------------- */
+  
+      /* ############## */
+      /* ROOT VARIABLES */
+      /* ############## */ 
+  
+  :root {
+  	--core-skill-indicator-icon: url('https://i.imgur.com/WD6nLLD.png');
+  	
+  }
+  
+  .sw h4 strong {
+  	color:#920B12;
+  	bottom-border-color:#920B12;
+  	font-weight:unset;
+  	letter-spacing:unset;
+  }
+
+  .sw h4 strong::before {
+	content: '';
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background: var(--core-skill-indicator-icon);
+  	background-size:contain;
+  	filter:hue-rotate(1deg) saturate(92%) brightness(60%);
+	top: 0;
+	left: 0;
+  	margin-right:5px;
+  	transform: scale(1.2);
+  }
+  
+  .sw h4, .sw blockquote h4 {
+  	color:black;
+  	font-size:1.2em;
+  }
+
+/* ------------ H5 ---------- */
+/* -------------------------- */
+  
+  .sw h5 {
+  	color:#144567;
+  	font-size:1.8em;
+  	text-align:center;
+  	background-color:#B2C9D1;
+  	border-top:2px solid #144567;
+  	border-bottom:2px solid #144567;
+  }
+  
+/* ------------ H6 ---------- */
+/* -------------------------- */
+  
+  .sw h6 {
+  	color:#920B12;
+  	text-transform:uppercase;
+  	font-family:'Enriqueta';
+  }
+  
+  
+/* =========================== */
+/* ---------- LISTS ---------- */
+/* =========================== */
+  
+  .sw li strong:first-child {
+  	font-family:'Enriqueta';
+  	font-style:unset;
+  	text-transform:uppercase;
+  }
+  
+  
+  .sw ul {
+  	padding-left:1em;
+  }
+  
+  .sw p + ul {
+  	margin-top:-.8em;
+  }
+  
+  .sw ul li::marker {
+  	color:#920B12;
+  }
+  
+  .sw ul li {
+  	list-style:square;
+  }
+  
+/* ------- Misc Text -------- */
+/* -------------------------- */
+  
+  p + hr {
+  	margin-top:-.6em !important;
+  }
+  
+  
+/* =============================== */
+/* ---------- PAGE NUMS ---------- */
+/* =============================== */
+  
+  .sw .pageNumber  {
+  	position:absolute;
+  	color:whitesmoke;
+  	z-index:300;
+  	font-weight:bold;
+  	font-size:1em;
+  	background:url('https://i.imgur.com/G6en5xq.png');
+  	background-repeat:no-repeat;
+  	background-size:100% 100%;
+  	bottom:0;
+  	height:70px;
+  	padding-top:30px;
+  	text-align:center;
+  	right:0px
+  }
+  
+  .phb:nth-child(2n) .sw .pageNumber {
+  	left:0px;
+  }
+  
+/* ------ Chapter Index ------ */
+/* --------------------------- */
+/* The left and right banners  */
+/* --------------------------- */
+  
+  .sw .chapter-index  {
+  	position:absolute;
+  	color:whitesmoke;
+  	z-index:300;
+  	font-weight:bold;
+  	font-size:18px;
+  	height:350px;
+  	width:55px;
+  text-transform:uppercase;
+  	
+  } 
+  
+  .phb:nth-child(2n+1) .sw .chapter-index {
+  	right:-4px;
+  	background:url('https://i.imgur.com/t4AnTrC.png');
+  	background-repeat:no-repeat;
+  	background-size:100% 100%;
+  }
+  
+  .phb:nth-child(2n+1) .sw .chapter-index p {
+  	transform-origin:center left;
+  	transform:rotate(90deg);
+  	text-align:center;
+  	white-space:nowrap;
+  	margin-top:0px;
+  	margin-left:20px;
+  	width:300px;
+  }
+  
+  .phb:nth-child(2n) .sw .chapter-index {
+  	left:0px;
+  	top:0px !important;
+  	background:url('https://i.imgur.com/Dm4q0i7.png');
+  	background-repeat:no-repeat;
+  	background-size:100% 100%;
+  }
+  
+  
+  .phb:nth-child(2n) .chapter-index p {
+  	transform:rotate(270deg);
+  	text-align:left;
+  	white-space:nowrap;
+  	margin-top:230px;
+  	margin-left:12px;
+  }
+  
+/* =============================== */
+/* --------- BLOCKQUOTES --------- */
+/* =============================== */
+  
+/* needs improvement */
+
+  
+  .sw blockquote {
+  	background:none;
+  	border:none;
+  	box-shadow:none;
+  	margin:0 0 0 2em;
+  	padding:0;
+  	font-family:inherit
+  }
+  
+  .sw blockquote h6 {
+  	display:inline;
+  	float:left;
+  	margin-right:5px
+  }
+  
+  
+  
+  
+/* =============================== */
+/* --------- TEXT NOTES ---------- */
+/* =============================== */
+  
+
+  
+/* ------ Example Text Notes ------ */
+/* -------------------------------- */
+/* ---- Brown background notes ---- */
+/* -------------------------------- */
+  
+  .example {
+  	font-style:italic;
+  	background:#ECE7DA;
+  	border-radius:5px;
+  	padding:4px 6px;
+  	
+  }
+  
+  .example p {
+  	padding-bottom:4px;
+  	text-align:justify;
+  	line-height:1.2em
+  }
+  
+  .example p + p {
+  	margin-top:unset;
+  }
+  
+  .example em {
+  	font-style:normal;
+  }
+  
+  
+/* ------ Flavor Text Notes ------ */
+/* ------------------------------- */
+/* ---- The handwritten notes ---- */
+/* ------------------------------- */
+
+      /* ############## */
+      /* ROOT VARIABLES */
+      /* ############## */ 
+  
+  :root {
+  	--base-text-color:maroon;
+  	--greeting-color:inherit;
+  	--note-color:inherit;
+  	--signature-color:inherit;
+  
+  	--base-text-font:'rock salt';
+  	--greeting-font:inherit;
+  	--note-font:inherit;
+  	--signature-font:inherit;
+    
+    --base-text-size:12px;
+  }
+
+  
+  .flavor {
+  	font-family:var(--base-text-font);
+  	color:var(--base-text-color);
+  	margin-bottom:10px;
+    font-size:var(--base-text-size);
+  }
+  
+  .flavor p {
+  	text-align:center;
+  	font-family:var(--note-font);
+  	transform:rotate(0deg);
+  	color:var(--note-color);
+  	font-size:inherit;
+  }
+  
+  .flavor.greeting p:first-child {
+  	font-family:var(--greeting-font);
+  	text-align:left;
+  	transform:rotate(0deg);
+  	font-size:inherit;
+  	padding-top:0;
+  	height:auto;
+  	color:var(--greeting-color);
+  	font-weight:unset;
+  	background:none;
+  }
+  
+  .flavor.sig p:last-child {
+  	font-family:var(--signature-font);
+  	text-align:right;
+  	transform:rotate(-4deg);
+  	font-size:inherit;
+  	padding-top:0;
+  	height:auto;
+  	font-weight:unset;
+  	border:none;
+  	color:var(--signature-color);
+  }
+  
+  .flavor.wide h3 {
+  	margin-top:18px
+  }
+
+
+/* =============================== */
+/* ----------- TABLES------------- */
+/* =============================== */
+  
+      /* ############## */
+      /* ROOT VARIABLES */
+      /* ############## */ 
+  
+  :root {
+  	--row-color-one:#ece5d9;
+  	--row-color-two:#dbd2ba;
+  
+  	--column-headers-bg-color:black;
+  	--column-headers-text-color:white;
+  
+    --table-title-bg-color:#8D0B12;
+  	--table-title-text-color:white;
+  }
+  
+  
+  .sw table {
+  	background:var(--row-color-one);
+  	border-radius:12px;
+  }
+  
+  .sw table tbody tr {
+  	background-color:unset !important;
+  }
+  
+  .sw table tr:nth-of-type(2n) td {
+  	background:var(--row-color-two);
+  }
+
+  .sw .table tr:nth-of-type(2n+1) td {
+  	background-color:var(--row-color-one);
+  }
+  
+  .sw table td {
+  	vertical-align:middle;
+  }
+  
+  .sw .table:not(.double) table:last-of-type tr:last-of-type td:first-of-type, .sw .table.double table:first-of-type tr:last-of-type td:first-of-type {
+  	border-bottom-left-radius:12px
+  }
+  
+    .sw .table table:last-of-type tr:last-of-type td:last-of-type {
+  	border-bottom-right-radius:12px
+  }
+  
+  .sw h4 + .table {
+  	margin-top:5px;
+  }
+  
+  .sw table thead tr {
+  	background:var(--column-headers-bg-color);
+  	color:var(--column-headers-text-color);
+  	text-transform:uppercase;
+  }
+  
+  .sw table thead tr th {
+  	padding-top:5px;
+  }
+  
+  .sw .table h6 {
+  	text-align:center;
+  	background:var(--table-title-bg-color);
+  	color:var(--table-title-text-color);
+  	font-size:18px;
+  	font-family:'enriqueta';
+  	border-radius:12px 12px 0 0;
+  	margin-bottom:0;
+  	height:25px;
+  	padding-top:3px;
+  	column-span:unset !important;
+  }
+  
+  .sw .table h6 + p::first-letter {
+  	float:unset;
+  	font-size:inherit;
+  	font-family:inherit;
+  	color:inherit;
+  	line-height:inherit;
+  }
+  
+  .sw .table h6 ~ p {
+  	background:#ece5d9;
+  	font-size:12px;
+  	font-family:'scaly sans';
+  	text-transform:inherit;
+  	font-weight:inherit;
+  	text-align:justify;
+  	width:auto;
+  	margin:0;
+  	padding:.3em .3em 0 .3em;
+  	color:black;
+  	height:auto;
+  	line-height:1.1em;
+  }
+  
+  .sw .table p + p {
+  	text-indent:0;
+  	padding-top:.4em;
+  }
+  
+/* ID SPECIFIC TABLES  */
+  
+  #size-table th:last-of-type, #size-table td:last-of-type {
+  	width:30% !important;
+  }
+  
+  
+/* -------- DOUBLE TABLES ------- */
+/* ------------------------------ */
+  
+  .table.double {
+  	column-count:2;
+  	column-gap:1px;
+  }
+  
+  .table.double h6 {
+  	column-span:all !important;
+  }
+  
+  .table.double table + p {
+  	display:none;
+  }
+  
+  
+/* ---- MULTI SECTION TABLES ---- */
+/* ------------------------------ */
+  
+      /* ############## */
+      /* ROOT VARIABLES */
+      /* ############## */ 
+  
+  :root{
+  	--multiTable-section-base-color:10;   /* number 0-359 */ 
+  	--multiTable-section-text1:black;     /* Section header text colors */ 
+  	--multiTable-section-text2:white;     /* ditto, for LAST FOUR sections */
+  }
+  
+  .sw .multi-section {
+  	position:relative;
+  }
+  
+  .sw .multi-section table:not(:last-of-type) {
+  	border-radius:unset;
+  	margin-bottom:0 !important;
+  }
+
+  
+  .sw .multi-section table + p:before {
+  	content:'';
+  	display:inline-block;
+  	position:relative;
+  	background:black;
+  	height:2px;
+  	flex:1;
+  	margin:6px 3px
+  }
+  
+  .sw .multi-section table + p:after {
+  	content:'';
+  	display:inline-block;
+  	position:relative;
+  	background:black;
+  	height:2px;
+  	flex:1;
+  	margin:6px 3px
+  }
+  
+  .sw .multi-section table + p {
+  	font-family:'scaly sans';
+  	text-transform:uppercase !important;
+  	text-align:center !important;
+  	background:hsl(var(--multiTable-section-base-color),48%,78%);
+  	display:flex;
+  	text-indent:unset;
+  	line-height:18px;
+  }
+  
+  .sw .multi-section table:nth-last-of-type(9) + p {
+  	filter:hue-rotate(270deg) saturate(92%) brightness(100%);
+  	color:var(--multiTable-section-text1);
+  }
+  
+  .sw .multi-section table:nth-last-of-type(8) + p {
+  	filter:hue-rotate(308deg) saturate(92%) brightness(100%);
+  	color:var(--multiTable-section-text1);
+  }
+  
+  .sw .multi-section table:nth-last-of-type(7) + p {
+  	filter:hue-rotate(328deg) saturate(100%) brightness(100%);
+  	color:var(--multiTable-section-text1);
+  }
+  
+  .sw .multi-section table:nth-last-of-type(6) + p {
+  	filter:hue-rotate(338deg) saturate(180%) brightness(100%);
+  	color:var(--multiTable-section-text1);
+  }
+  
+  .sw .multi-section table:nth-last-of-type(5) + p {
+  	filter:hue-rotate(348deg) saturate(600%) brightness(100%);
+  	color:var(--multiTable-section-text2);
+  }
+  
+  .sw .multi-section table:nth-last-of-type(4) + p {
+  	filter:hue-rotate(352deg) saturate(900%) brightness(100%);
+  	color:var(--multiTable-section-text2);
+  }
+  
+  .sw .multi-section table:nth-last-of-type(3) + p {
+  	filter:hue-rotate(359deg) saturate(1500%) brightness(100%);
+  	color:var(--multiTable-section-text2);
+  }
+  
+  .sw .multi-section table:nth-last-of-type(2) + p {
+  	background:hsl(4,65%,42%) !important;
+  	color:var(--multiTable-section-text2);
+  }
+  
+  .sw .multi-section table:nth-last-of-type(1) + p {
+  	background:hsl(1,85%,48%) !important;
+  	color:var(--multiTable-section-text2);
+  }
+  
+  .sw .multi-section table + p + table thead {
+  	display:none
+  }
+  
+  .sw .multi-section table:first-of-type tbody {
+  	display:none;
+  }
+  
+  .sw .multi-section table td, .sw .multi-section table th {
+  	width:1000px !important;
+  	word-break:break-word;
+  	padding-left:8px;
+  	padding-right:8px;
+  }
+  
+/* =============================== */
+/* ----- TABLE OF CONTENTS ------- */
+/* =============================== */
+  
+  .sw .toc h2, .sw .toc h5 {
+  	column-span:all;
+  	background-size:100% 100px;
+  	z-index:500;
+  }
+  
+  .sw .toc h2 {
+  	width:110%;
+  	margin-left:-5%;
+  }
+  
+  .sw .toc h5 {
+  	margin-bottom:.7em
+  }
+  
+  .sw .toc ul {
+  	margin-left:0;
+  	position:relative;
+  }
+  
+  .sw .toc ul li {
+  	list-style:none;
+  }
+  
+  .sw .toc>ul>li {
+  	margin-bottom:2em !important;
+  }
+  
+  .sw .toc>ul>li strong {
+  	font-family:impact;
+  	font-size:.529cm;
+  	border-bottom:2px solid;
+  	width:100%;
+  	padding-bottom:.1em;
+  	display:inline-block;
+  	margin-bottom:.3em
+  }
+  
+  .sw .toc ul li ul li strong {
+  	font-family:'BookSanity';
+  	font-size:inherit;
+  	border:unset;
+  	text-transform:inherit;
+  	font-weight:inherit;
+  	display:unset;
+  }
+  
+  
+  
+/* ------------------ ToC NESTED 3rd LVL HEADERS -------------------- */
+/* -------------------------------------------------------- */
+/* ------ Delete this rule if you want to keep your lvl 3 headers nested.  Currently cannot use page #s (next section) if not using this rule. ------- */
+/* -------------------------------------------------------- */
+  
+  .sw .toc>ul>li>ul>li{
+  	position:relative;
+  	display:flex;
+  }
+  
+/* ------------------ ToC PAGE NUMBERS -------------------- */
+/* -------------------------------------------------------- */
+/* ------ Delete these 2 rules if no page #s wanted ------- */
+/* -------------------------------------------------------- */
+  
+  .sw .toc>ul>li>ul>li:before {
+  	content:'';
+  	left:0;
+  	position:relative;
+  	order:2;
+  	flex:1;
+  	border-bottom:1.5px dotted black;
+  	display:block;
+  	bottom:.3em;
+  	margin:0 .3em;
+  }
+  
+  .sw .toc>ul>li>ul>li em {
+  	right:0;
+  	flex:0;
+  	order:3
+  }
+  
+/* ---------------------------------- */
+/* ---------- END OF STYLES --------- */
+/* ---------- END OF STYLES --------- */
+/* ---------- END OF STYLES --------- */
+/* ---------- END OF STYLES --------- */
+/* ---------------------------------- */

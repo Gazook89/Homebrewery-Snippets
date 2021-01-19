@@ -1,0 +1,29 @@
+.footer {
+  --lines:1;
+  text-align:center;
+  position:absolute;
+  bottom:0px;
+  left:0px;
+  width:100%;
+  height:25px;
+  line-height:.9em;
+  padding-top:calc(6px / var(--lines));
+  color:#c9ad6a;
+  font-family:'nodesto';
+  font-variant:all-small-caps;
+  font-size:calc(1.1em - calc(.1em * var(--lines)));
+  z-index:205;
+}
+
+.footer a {
+  color:#c9ad6a;
+}
+
+.icons img {
+  position:relative;
+  width:10px;
+  margin-right:3px;
+  margin-left:3px;
+  top:1px;
+  opacity:25%
+}

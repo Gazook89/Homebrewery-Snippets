@@ -1,0 +1,34 @@
+.kofi {
+  position:fixed;
+  top:-30px;
+  left:50%;
+  width:110px;
+  transform:translateX(-50%);
+  background:#434B57;
+  border-radius:0 0 10px 10px;
+  padding:4px;
+  transition:all .2s ease-in;
+}
+
+.kofi img {
+  height:25px;
+  text-align:center;
+}
+
+.kofi p {
+  padding-bottom:0;
+  text-align:center;
+  color:white;
+  font-family:'scalysans';
+  font-size:10px;
+}
+
+.kofi p + p {
+  text-indent:0;
+  margin-top:3px;
+}
+
+.kofi:hover {
+  top:0px;
+  transition:all .2s ease-out;
+}

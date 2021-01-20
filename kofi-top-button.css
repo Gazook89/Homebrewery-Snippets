@@ -1,34 +1,44 @@
-.kofi {
-  position:fixed;
-  top:-30px;
-  left:50%;
-  width:110px;
-  transform:translateX(-50%);
-  background:#434B57;
-  border-radius:0 0 10px 10px;
-  padding:4px;
-  transition:all .2s ease-in;
-}
-
-.kofi img {
-  height:25px;
-  text-align:center;
-}
-
-.kofi p {
-  padding-bottom:0;
-  text-align:center;
-  color:white;
-  font-family:'scalysans';
-  font-size:10px;
-}
-
-.kofi p + p {
-  text-indent:0;
-  margin-top:3px;
-}
-
-.kofi:hover {
-  top:0px;
-  transition:all .2s ease-out;
-}
+  .kofi {
+    position:fixed;
+    top:0px;
+    left:50%;
+    width:107px;
+    transform:translateX(-50%);
+    background:#434B57;
+    border-radius:0 0 10px 10px;
+    padding:4px;
+    transition:all .2s ease-in;
+  	overflow-y:hidden;
+  	color:white;
+  	font-family:'scalysans';
+  	text-align:center;
+  	font-size:10px;
+  	line-height:1.2em;
+  	height:34px;
+  }
+  
+  .kofi img {
+    height:25px;
+    text-align:center;
+  }
+  
+  .kofi span {
+  	font-size:.8em;
+  	font-style:italic;
+  }
+  
+  .kofi p:empty {
+  	display:none;
+  }
+  
+  .kofi p {
+  	padding-bottom:0;
+  }
+  
+  .kofi p + p {
+  	padding-top:10px
+  }
+  
+  .kofi:hover {
+  	height:100px;
+  }

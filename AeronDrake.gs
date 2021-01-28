@@ -1,3 +1,6 @@
+/** @OnlyCurrentDoc */
+
+
 function onOpen() {
   var ui = SpreadsheetApp.getUi();
   ui.createMenu('My Custom Menu')

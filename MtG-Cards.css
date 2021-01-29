@@ -361,12 +361,13 @@
   	position:relative;
   }
   
+
+  
   /* adjust mana icon size for the text area so it works inline better */
   
   .card .text span[mana]:before {
   	height:11px;
-  	width:11px
-  
+  	width:11px;
   }
   
   /* adjust mana icon size and position for the text area so it works inline better */
@@ -417,6 +418,12 @@
   	display:inline-block;
   }
   
+  /* remove drop shadows from mana icons in text area */
+  
+  .card .text span:before {
+  	filter:none;
+  }
+  
   /* mana icon colors and matching symbol */
   
   .card span[mana=forest]:before {
@@ -453,4 +460,6 @@
   .card span[mana=swamp]:after {
   	content:'c';
   }  
+  
+  
   

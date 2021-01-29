@@ -1,0 +1,456 @@
+  /* below is to import a font which contains the mana icons */
+  
+  @import url('https://rawcdn.githack.com/Gazook89/Homebrewery-Snippets/3bc3e159be654ab42a027cdc38278fd62478fa3e/font-Planeswalker.css');
+  
+  /*  root variables below for making some quick changes (remove the spaces between comment syntax at end of each line)
+  
+  :root {
+  	--page-visibility:visible;  / * hidden or visible * /
+  	--card-spacing:0px; / * px * /
+  	--card-shadows:;  / * color * /
+  	--cut-lines:gray; / * color * /
+  	--crop-marks:visible;  / * hidden or visible * /
+  	--icon-shadows:1px;  / * 1px, or [empty] * /
+  	--footer-text:'Unofficial Fan Content. Not endorsed by Wizards of the Coast.';   / * text inside apostrophes, ex. 'Please don't sue me'  * /
+  }
+  
+  */
+  
+  
+  
+  /* page setup */
+  
+  .phb {
+  	columns:1;
+  	column-gap:0;
+  	padding:0;
+  	display:flex;
+  	flex-wrap:wrap;
+  	justify-content: flex-start;
+  	align-content: flex-start;
+  	flex-direction:row;
+  	visibility:var(--page-visibility);
+  }
+  
+  /* Crop Marks - ul:upper-left, ur:upper-right, etc. */
+  
+  div[ul], div[ur], div[lr], div[ll] {
+  	position:absolute;
+  	display:block;
+  	height:5px;
+  	width:5px;
+  	visibility:var(--crop-marks);
+  }
+  
+  div[ul] {
+  	border-top:1px solid red;
+  	border-left:1px solid red;
+  	top:-12px;
+  	left:-12px;
+  }
+  
+  div[ur] {
+  	border-top:1px solid red;
+  	border-right:1px solid red;
+  	top:-12px;
+  	right:-12px;
+  }
+  
+  div[lr] {
+  	border-bottom:1px solid red;
+  	border-right:1px solid red;
+  	top:calc(88mm - 15px);
+  	right:-12px;
+  }
+  
+  div[ll] {
+  	border-bottom:1px solid red;
+  	border-left:1px solid red;
+  	top:calc(88mm - 15px);
+  	left:-12px;
+  }
+  
+  .card:before {
+  	content:'';
+  	background:black;
+  	display:block;
+  	position:absolute;
+  	width:63mm;
+  	height:88mm;
+  	top:-11px;
+  	left:-11px;
+  	z-index:-2;
+  	border-radius:15px;
+  	outline:1px dotted var(--cut-lines);
+  	filter: drop-shadow(2px 2px 8px var(--card-shadows));
+  	
+  }
+  
+  .card {
+  	position:relative;
+  	flex: 0 0 calc(63mm - 22px);
+  	height:calc(88mm - 24px);
+  	margin:calc(11px + var(--card-spacing));
+  	margin-bottom:13px;
+  	top:0px;
+  	left:0px;
+  	padding:0 3px;
+  	visibility:visible;
+  	color:whitesmoke;
+  }
+  
+  .card:after {
+  	content:'';
+  	height:calc(88mm - 25px);
+  	width:56.8mm;
+  	display:block;
+  	border:.5px solid darkslategray;
+  	border-radius:2px;
+  	position:absolute;
+  	top:0px;
+  	left:0px;
+  	background:url('https://i.imgur.com/9jCro2O.jpg?1');
+  	background-size:cover;
+  	background-position:center;
+  	z-index:-1;
+  	
+  }
+  
+  .card p {
+  	font-size:8.8pt;
+  	line-height:1em;
+  	padding-bottom:0;
+  }
+  
+  .card p + p {
+  	text-indent:0;
+  }
+
+  .card h1 {
+  	font-size:9pt;
+  	font-family:'booksanity';
+  	font-weight:unset;
+  	color:unset;
+  	letter-spacing:.03em;
+  	filter:drop-shadow(var(--icon-shadows) 1px #22222288)
+  }
+  
+  .card.white h1, .card.yellow h1 {
+  	filter:drop-shadow(var(--icon-shadows) 1px #ffffffdd);
+  }
+  
+  .image-frame {
+  	width:48.5mm;
+  	height:39mm;
+  	overflow:clip;
+  	margin:0px auto 4px auto;
+  	background-repeat:no-repeat;
+  	background-size:100%;
+  	background-position:center;
+  	box-shadow:
+      0 0 1px 2px #00000022, 
+      0 -2px 1px #00000044,
+  	  2px 0 1px #00000044;
+  }
+  
+  .image-frame + p, .text + p {
+  	margin-left:10px;
+  }
+  
+  .text {
+  	background:#ffffffaa;
+  	width:48.5mm;
+  	height:27mm;
+  	margin:18px auto 6px auto;
+  	border-radius:0px;
+  	padding: 5px 5px;
+  	box-shadow:
+      0 0 1px 2px #00000022, 
+      0 -2px 1px #00000044,
+  	  2px 0 1px #00000044;
+  	color:black;
+  }
+  
+  .text p {
+  	margin-bottom:4px;
+  }
+  
+  .text p + p {
+  	margin-top:0;
+  }
+  
+  .phb .card del {
+  	text-decoration:none; 
+  	background:#ccc;
+  	border-radius:50%;
+  	width:12px;
+  	height:12px;
+  	display:inline-block;
+  	text-align:center;
+  	filter:drop-shadow(1px 1px #22222288);
+  }
+  
+  .phb .card .text del {
+  	filter:unset;
+  }
+  
+  /* Card background colors */
+  
+  .red {
+  	background:#aa000066;
+  }
+  
+  .green {
+  	background:#003a0466 !important;
+  }
+  
+  .blue {
+  	background:#005ac466;
+  }
+  
+  .black {
+  	background:#000000bb;
+  }
+  
+  .yellow {
+  	background:#E5DDB7cc;
+  	color:black;
+  }
+  
+  .white {
+  	color:black;
+  }
+  
+  .neutral {
+  	background:#9A8D7Cee;
+  }
+  
+  
+  
+  
+  /*  =====STAT Table=====  */
+  
+    /* remove all table styles applied by .phb stylsheet */
+  
+  .phb table {
+  	all:unset;
+  }
+  
+  /* position stats table to cover entire card */
+  
+  .card table {
+  	margin-bottom:0;
+  	position:absolute;
+  	top:0px;
+  	left:0px;
+  	width:100%;
+  	height:100%;
+  }
+  
+  /* change text color for lighter-colored cards */
+  
+  .card.white table, .card.yellow table {
+  	color:black
+  }
+  
+  /* hiding the table headers */
+  
+  .card th {
+  	display:none;
+  }
+  
+  /* base styling rules for table cells */
+  
+  .card td {
+  	display:block;
+  	position:absolute;
+  	padding:0 !important;
+  	font-size:9pt;
+  	vertical-align:center;
+  }
+  
+  /* Styling the Edition symbol */
+  
+  .card td:nth-of-type(1) {
+  	top:161px;
+  	right:12px;
+  	font-family:'planewalker_dingsregular';
+  	font-size:22px;
+  	color:black;
+  	-webkit-text-stroke:.5px white;
+  }
+  
+  /* switch Edition text fill and stroke for light-colored card backgrounds */
+  
+  .card.white td:nth-of-type(1), .card.yellow td:nth-of-type(1)  {
+  	color:whitesmoke;
+  	-webkit-text-stroke:.5px black;
+  }
+  
+  /* position the card type text */
+  
+  .card td:nth-of-type(2) {
+  	top:167px;
+  	left:13px;
+  }
+
+  
+  /* position the mana cost text */
+  
+  .card td:nth-of-type(3) {
+  	top:2px;
+  	right:12px;
+  }
+  
+  /* position the strength text */
+  
+  .card td:nth-of-type(4) {
+  	right:12px;
+  	bottom:5px;
+  	filter:drop-shadow(var(--icon-shadows) 1px #22222288);
+  }
+  
+  .card.white td:nth-of-type(4), .card.yellow td:nth-of-type(4) {
+  	filter:drop-shadow(var(--icon-shadows) 1px #ffffffdd);
+  }
+  
+  
+  /* position the artist credit */
+  
+  .card td:nth-of-type(5) {
+  	bottom:10px;
+  	left:13px;
+  	font-size:.8em;
+  	
+  }
+  
+  /* add "Illus." to artist credit */
+  
+  .card td:nth-of-type(5):before {
+  	content:'Illus. \00A9';
+  	margin-right:4px;
+  }
+  
+  /* add fan content footer */
+  
+  .card td:nth-of-type(5):after {
+  	content: var(--footer-text);
+  	display:block;
+  	font-size:.6em;
+  	position:absolute;
+  	width:160px;
+  }
+  
+  
+  
+  
+  
+  /* =====MANA Icons=== */ 
+  
+    /* colorless mana cost icon, or unstyled unclassed spans */
+  
+  .card span:not([class]):not([style]):not([mana]) {
+  	display:inline-block;
+  	background:#ccc;
+  	border-radius:10px;
+  	width:12px;
+  	text-align:center;
+  	color:black;
+  	filter:drop-shadow(var(--icon-shadows) 1px #22222288);
+  	margin:0 1px;
+  	position:relative;
+  }
+  
+  /* adjust mana icon size for the text area so it works inline better */
+  
+  .card .text span[mana]:before {
+  	height:11px;
+  	width:11px
+  
+  }
+  
+  /* adjust mana icon size and position for the text area so it works inline better */
+  
+  .card .text span[mana] {
+  	font-size:17px;
+  	height:0px;
+  	width:11px;
+  	top:-4px;
+  }
+  
+  /* mana icon background */
+ 
+  .card span[mana]:before {
+  	content:'';
+  	display:block;
+  	position:absolute;
+  	top:.5px;
+  	left:0px;
+  	border-radius:50%;
+  	position:absolute;
+  	height:100%;
+  	width:100%;
+  	filter:drop-shadow(var(--icon-shadows) 1px #22222288);
+  }
+  
+  /* mana icon position */
+  
+  .card span[mana] {
+  	font-family:'planewalker_dingsregular';
+  	font-size:20px;
+  	margin:0px 1px;
+  	position:relative;
+  	height:13px;
+  	width:13px;
+  	display:inline-block;
+  	top:-3px;
+  	line-height:0;
+  }
+  
+  /* mana icon text symbol */
+  
+  .card span[mana]:after {
+  	content:'';
+  	position:relative;
+  	top:6px;
+  	color:black;
+  	display:inline-block;
+  }
+  
+  /* mana icon colors and matching symbol */
+  
+  .card span[mana=forest]:before {
+  	background:#B5C7A8;
+  }
+  .card span[mana=forest]:after {
+  	content:'e';
+  }
+  
+  .card span[mana=mtn]:before {
+  	background:#EBB599;
+  }
+  .card span[mana=mtn]:after {
+  	content:'d';
+  }
+  
+  .card span[mana=island]:before {
+  	background:#C7C6C0;
+  }
+  .card span[mana=island]:after {
+  	content:'b';
+  }
+  
+  .card span[mana=plains]:before {
+  	background:#D8DCA1;
+  }
+  .card span[mana=plains]:after {
+  	content:'a';
+  }
+  
+  .card span[mana=swamp]:before {
+  	background:#E3CAB5;
+  }
+  .card span[mana=swamp]:after {
+  	content:'c';
+  }  
+  

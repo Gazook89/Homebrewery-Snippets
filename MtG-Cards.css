@@ -17,7 +17,6 @@
   */
   
   
-  
   /* page setup */
   
   .phb {
@@ -127,8 +126,8 @@
   }
 
   .card h1 {
-  	font-size:9pt;
-  	font-family:'booksanity';
+  	font-size:10pt;
+  	font-family:'magicthe_gatheringregular';
   	font-weight:unset;
   	color:unset;
   	letter-spacing:.03em;
@@ -171,6 +170,14 @@
   	color:black;
   }
   
+  .card .text.center {
+  	text-align:center;
+  	display:flex;
+  	flex-direction:column;
+  	justify-content: center;
+  }
+  
+  
   .text p {
   	margin-bottom:4px;
   }
@@ -188,6 +195,7 @@
   	display:inline-block;
   	text-align:center;
   	filter:drop-shadow(1px 1px #22222288);
+  	transform:rotate(35deg);
   }
   
   .phb .card .text del {
@@ -272,7 +280,7 @@
   /* Styling the Edition symbol */
   
   .card td:nth-of-type(1) {
-  	top:161px;
+  	top:163px;
   	right:12px;
   	font-family:'planewalker_dingsregular';
   	font-size:22px;
@@ -290,7 +298,7 @@
   /* position the card type text */
   
   .card td:nth-of-type(2) {
-  	top:167px;
+  	top:169px;
   	left:13px;
   }
 
@@ -361,7 +369,9 @@
   	position:relative;
   }
   
-
+  .card .text span:not([class]):not([style]):not([mana]) {
+  	filter:none;
+  }
   
   /* adjust mana icon size for the text area so it works inline better */
   
@@ -460,6 +470,8 @@
   .card span[mana=swamp]:after {
   	content:'c';
   }  
+  
+  
 
 /*  FONTS  */
 

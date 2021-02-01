@@ -33,21 +33,22 @@
   
     /* PAGE NUMBERS */
   
-  .phb .pageNumber {
-  	counter-increment:phb-page-numbers;
-  }
-
   .phb .pageNumber.auto {
   	left:280px;
   	bottom:50px;
   	color:black;
+  	counter-increment:phb-page-numbers;
   }
   
-  .phb > .pageNumber.auto:nth-of-type(2) {
-  	right:270px;
-  	left:unset
+  .phb>.pageNumber.auto:nth-last-of-type(2) {
+    left: 270px;
+    right: unset;
   }
   
+  .phb>.pageNumber.auto:nth-last-of-type(1) {
+    right: 270px;
+    left: unset;
+  }
   
   .brewRenderer .pages > .phb {
   	box-shadow:none;

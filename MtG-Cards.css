@@ -4,6 +4,7 @@
   
   :root {
   	--page-visibility:visible;  / * hidden or visible * /
+    --page-overflow: hidden; /* set to the OPPOSITE of --page-visibility */
   	--card-spacing:0px; / * px * /
   	--card-shadows:;  / * color * /
   	--cut-lines:gray; / * color * /
@@ -27,7 +28,7 @@
   	align-content: flex-start;
   	flex-direction:row;
   	visibility:var(--page-visibility);
-    overflow:var(--page-visibility);
+    overflow:var(--page-overflow);
   }
 
  .phb:after {

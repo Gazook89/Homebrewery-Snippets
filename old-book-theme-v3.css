@@ -1,265 +1,265 @@
-  
+
 /* Old Notebook Theme for Homebrewery Version 3 by John Jones is licensed under CC BY-SA 4.0 -- January 2021 */
 
-  @import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&family=Rock+Salt&family=Fredericka+the+Great&family=Cabin+Sketch:wght@400;700&family=Reenie+Beanie&display=swap');
-  
+@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&family=Rock+Salt&family=Fredericka+the+Great&family=Cabin+Sketch:wght@400;700&family=Reenie+Beanie&display=swap');
 
 
-  
-  .V3 .phb {
-  	width:11in;
-  	height:8.5in;
-  	column-count:2;
-  	column-gap:100px;
-  	background-color:transparent;
-  	background-image: url('https://i.imgur.com/rTNBHqN.png');
-  	background-position:center;
-  	background-size:100% 100%;
-  	background-repeat:no-repeat;
-  	filter:drop-shadow(1px 4px 14px black);
-  	padding: 90px 130px ;
-  	counter-increment:none;
-  }
-  
-  .V3 .phb:after {
-  	display:none;
-  }
-  
-  
-  
-  .V3 .phb:nth-of-type(1) {
-  	background-image:url('https://i.imgur.com/SK0nuuC.png');
-  }
-  
-    /* PAGE NUMBERS */
-  
-  .V3 .phb .pageNumber.auto {
-  	left:280px;
-  	bottom:50px;
-  	color:black;
-  	counter-increment:phb-page-numbers;
-  }
-  
-  .V3 .phb > .pageNumber.auto:nth-last-of-type(2) {
-    left: 270px;
-    right: unset;
-  }
-  
-  .V3 .phb > .pageNumber.auto:nth-last-of-type(1) {
-    right: 270px;
-    left: unset;
-  }
-  
-  .V3 .brewRenderer .pages > .phb {
-  	box-shadow:none;
-  }
-  
-  /* TEXT TEXT TEXT */
-  
-  
-  .V3 .phb p, .V3 .phb table, .V3 .phb ul, .V3 .phb blockquote, .V3 .phb blockquote strong  {
-  	font-family:'Reenie Beanie';
-  	color: #412121;
-  	font-size:20px;
-  	line-height:1em;
-  	padding:0;
-  }
-  
-  .V3 .phb p {
-  	text-align:left
-  	page-break-inside:unset;
-  	break-inside:unset;
-  	margin-bottom:0px;
-  }
-  
-  .V3 .phb p + p {
-  	margin:0;
-  	padding:0;
-  }
-  
-  .V3 .phb em {
-  	text-decoration:underline;
-  	font-style:unset;
-  }
-  
-  .V3 .phb strong {
-  	letter-spacing:0;
-  	font-size:1.2em
-  }
-  
-  .V3 .phb del {
-    text-decoration-style:double;
-  }
-  
-  /*   LINKS   */
-  
-  .V3 .phb a, .V3 .phb a:visited {
-  	color: #412121;
-  	transition:all 1s ease;
-  }
-  
-  .V3 .phb a:hover {
-  	color:red;
-  	transition:all 1s ease;
-  }
-  
-  /*  HEADERS  */
-  
-  .V3 .phb h1, .V3 .phb h2, .V3 .phb h3, .V3 .phb h4, .V3 .phb h5, .V3 .phb .pageNumber {
-  	font-family:'fredericka the great';
-  	font-weight:unset;
-  }
-  
- .V3 .phb h1 {
-  	column-span:unset;
-  }
-  
-  .V3 .phb h1 + p:first-letter {
-  	font-family:'fredericka the great';
-  	font-size:1.5em;
-  	color: inherit;
-  	padding-top:.3em;
-  	margin-right:2px;
-  }
-  
-  .V3 .phb h2 {
-  	font-size:2em;
-  
-  }
-  
-  .V3 .phb h3 {
-  	border:none;
-  	margin-left:-20px
-  }
-  
-  .V3 .phb h4 {
-  	transform:rotate(357deg);
-  	padding-bottom:5px
-  }
-  
-  
-  /*  TABLES  */
-  
-  .V3 .phb table tbody tr:nth-child(2n+1) {
-  	background:linear-gradient(to left, #41212100, #41212122, #41212100);
-  }
-  
-  .V3 .phb table thead th {
-  	font-weight:unset;
-  }
-  
-  .V3 .phb .classTable {
-  	mix-blend-mode:multiply;
-  	border:none;
-  }
-  
-  .V3 .phb .classTable tbody tr {
-  	line-height:.5em
-  }
-  
-  
-  /*  LISTS  */
-  
-  .V3 .phb hr + ul {
-  	padding-top:18px;
-  	margin-bottom:10px;
-  	margin-left:15px
-  }
-  
-  .V3 .phb .spellList {
-	column-count: 2;
-	column-span: none;
-	-webkit-column-span: all;
-	-moz-column-span: all;
-  }
-  
-  /*  NOTES  */
-  
-  .V3 .phb blockquote {
-  	border:20px solid;
-  	border-image:url('https://i.imgur.com/k544p79.png');
-  	border-image-slice:25% 10%;
-  	border-image-width:30px;
-  	border-image-repeat:stretch;
-  	border-image-outset:10px;
-  	position:relative;
-  	background:none;
-  	box-shadow:none;
-  }
-  
-  .V3 .phb blockquote p {
-  	font-size:inherit;
-  }
-  
-  .V3 .phb .descriptive {
-  	background:none;
-  	box-shadow:none;
-  	border-style:solid;
-  	border-image:url('https://i.imgur.com/I2hMYzK.png');
-  	border-image-slice:38% 10%;
-  	border-image-width:40px;
-  	border-image-repeat:stretch;
-  	border-image-outset:0px;
-  	padding:25px
-  }
-  
-  .V3 .phb .descriptive p {
-  	font-family:'jim nightshade';
-  	color: #412121;
-  	font-size:18px;
-  	line-height:1.1em;
-  }
-  
-  .V3 .phb .descriptive h5 {
-  	font-family:'jim nightshade';
-  	color:#412121;
-  	font-size:22px
-  }
-  
-  .V3 .phb .descriptive strong {
-  	font-family:inherit
-  }
-  
-  
-  
-  /* MONSTER STAT BLOCKS */
-  
-  .V3 .phb hr + blockquote {
-  	background:none;
-  	border:20px solid;
-  	border-image:url('https://i.imgur.com/k544p79.png');
-  	border-image-slice:25% 10%;
-  	border-image-width:30px;
-  	border-image-repeat:stretch;
-  	border-image-outset:10px;
-	padding: 5px 0px
-  }
-  
-  .V3 .phb hr + blockquote h2 {
-  	font-size:24px;
-  }
-  
-  .V3 .phb hr + blockquote h3 {
-  	font-size:28px;
-  	margin-left:0
-  }
-  
-  .V3 .phb hr + blockquote p, .V3 .phb hr + blockquote ul, .V3 .phb hr + blockquote li, .V3 .phb hr + blockquote ul strong, .V3 .phb hr + blockquote em, .V3 .phb hr + blockquote h3  {
-  	color: #412121;
-  	font-family:'reenie beanie';
-  }
-  
-  .V3 .phb hr + blockquote hr + ul, .V3 .phb hr + blockquote table {
-  	padding-top:0;
-  	margin-left:0
-  }
-  
-  .V3 .phb hr + blockquote p + p {
-  	padding-bottom:0;
-  	margin-bottom:0;
-  }
-  
-  .V3 .phb hr + blockquote li {
-  	font-size:20px;
-  }
-  
+
+
+.phb3 {
+  width:11in;
+  height:8.5in;
+  column-count:2;
+  column-gap:100px;
+  background-color:transparent;
+  background-image: url('https://i.imgur.com/rTNBHqN.png');
+  background-position:center;
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  filter:drop-shadow(1px 4px 14px black);
+  padding: 90px 130px ;
+  counter-increment:none;
+}
+
+.phb3:after {
+  display:none;
+}
+
+
+
+.phb3:nth-of-type(1) {
+  background-image:url('https://i.imgur.com/SK0nuuC.png');
+}
+
+  /* PAGE NUMBERS */
+
+.phb3 .pageNumber.auto {
+  left:280px;
+  bottom:50px;
+  color:black;
+  counter-increment:phb-page-numbers;
+}
+
+.phb3 > .pageNumber.auto:nth-last-of-type(2) {
+  left: 270px;
+  right: unset;
+}
+
+.phb3 > .pageNumber.auto:nth-last-of-type(1) {
+  right: 270px;
+  left: unset;
+}
+
+.V3 .brewRenderer .pages > .phb {
+  box-shadow:none;
+}
+
+/* TEXT TEXT TEXT */
+
+
+.phb3 p, .phb3 table, .phb3 ul, .phb3 blockquote, .phb3 blockquote strong  {
+  font-family:'Reenie Beanie';
+  color: #412121;
+  font-size:20px;
+  line-height:1em;
+  padding:0;
+}
+
+.phb3 p {
+  text-align:left
+  page-break-inside:unset;
+  break-inside:unset;
+  margin-bottom:0px;
+}
+
+.phb3 p + p {
+  margin:0;
+  padding:0;
+}
+
+.phb3 em {
+  text-decoration:underline;
+  font-style:unset;
+}
+
+.phb3 strong {
+  letter-spacing:0;
+  font-size:1.2em
+}
+
+.phb3 del {
+  text-decoration-style:double;
+}
+
+/*   LINKS   */
+
+.phb3 a, .phb3 a:visited {
+  color: #412121;
+  transition:all 1s ease;
+}
+
+.phb3 a:hover {
+  color:red;
+  transition:all 1s ease;
+}
+
+/*  HEADERS  */
+
+.phb3 h1, .phb3 h2, .phb3 h3, .phb3 h4, .phb3 h5, .phb3 .pageNumber {
+  font-family:'fredericka the great';
+  font-weight:unset;
+}
+
+.phb3 h1 {
+  column-span:unset;
+}
+
+.phb3 h1 + p:first-letter {
+  font-family:'fredericka the great';
+  font-size:1.5em;
+  color: inherit;
+  padding-top:.3em;
+  margin-right:2px;
+}
+
+.phb3 h2 {
+  font-size:2em;
+
+}
+
+.phb3 h3 {
+  border:none;
+  margin-left:-20px
+}
+
+.phb3 h4 {
+  transform:rotate(357deg);
+  padding-bottom:5px
+}
+
+
+/*  TABLES  */
+
+.phb3 table tbody tr:nth-child(2n+1) {
+  background:linear-gradient(to left, #41212100, #41212122, #41212100);
+}
+
+.phb3 table thead th {
+  font-weight:unset;
+}
+
+.phb3 .classTable {
+  mix-blend-mode:multiply;
+  border:none;
+}
+
+.phb3 .classTable tbody tr {
+  line-height:.5em
+}
+
+
+/*  LISTS  */
+
+.phb3 hr + ul {
+  padding-top:18px;
+  margin-bottom:10px;
+  margin-left:15px
+}
+
+.phb3 .spellList {
+column-count: 2;
+column-span: none;
+-webkit-column-span: all;
+-moz-column-span: all;
+}
+
+/*  NOTES  */
+
+.phb3 blockquote {
+  border:20px solid;
+  border-image:url('https://i.imgur.com/k544p79.png');
+  border-image-slice:25% 10%;
+  border-image-width:30px;
+  border-image-repeat:stretch;
+  border-image-outset:10px;
+  position:relative;
+  background:none;
+  box-shadow:none;
+}
+
+.phb3 blockquote p {
+  font-size:inherit;
+}
+
+.phb3 .descriptive {
+  background:none;
+  box-shadow:none;
+  border-style:solid;
+  border-image:url('https://i.imgur.com/I2hMYzK.png');
+  border-image-slice:38% 10%;
+  border-image-width:40px;
+  border-image-repeat:stretch;
+  border-image-outset:0px;
+  padding:25px
+}
+
+.phb3 .descriptive p {
+  font-family:'jim nightshade';
+  color: #412121;
+  font-size:18px;
+  line-height:1.1em;
+}
+
+.phb3 .descriptive h5 {
+  font-family:'jim nightshade';
+  color:#412121;
+  font-size:22px
+}
+
+.phb3 .descriptive strong {
+  font-family:inherit
+}
+
+
+
+/* MONSTER STAT BLOCKS */
+
+.phb3 hr + blockquote {
+  background:none;
+  border:20px solid;
+  border-image:url('https://i.imgur.com/k544p79.png');
+  border-image-slice:25% 10%;
+  border-image-width:30px;
+  border-image-repeat:stretch;
+  border-image-outset:10px;
+padding: 5px 0px
+}
+
+.phb3 hr + blockquote h2 {
+  font-size:24px;
+}
+
+.phb3 hr + blockquote h3 {
+  font-size:28px;
+  margin-left:0
+}
+
+.phb3 hr + blockquote p, .phb3 hr + blockquote ul, .phb3 hr + blockquote li, .phb3 hr + blockquote ul strong, .phb3 hr + blockquote em, .phb3 hr + blockquote h3  {
+  color: #412121;
+  font-family:'reenie beanie';
+}
+
+.phb3 hr + blockquote hr + ul, .phb3 hr + blockquote table {
+  padding-top:0;
+  margin-left:0
+}
+
+.phb3 hr + blockquote p + p {
+  padding-bottom:0;
+  margin-bottom:0;
+}
+
+.phb3 hr + blockquote li {
+  font-size:20px;
+}
+

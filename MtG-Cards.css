@@ -27,6 +27,7 @@
   	align-content: flex-start;
   	flex-direction:row;
   	visibility:var(--page-visibility);
+    overflow:var(--page-visibility);
   }
 
  .phb:after {

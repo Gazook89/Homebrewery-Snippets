@@ -4,7 +4,7 @@
   
   :root {
   	--page-visibility:visible;  / * hidden or visible * /
-    --page-overflow: hidden; /* set to the OPPOSITE of --page-visibility */
+    --page-overflow: hidden; / * set to the OPPOSITE of --page-visibility * /
   	--card-spacing:0px; / * px * /
   	--card-shadows:;  / * color * /
   	--cut-lines:gray; / * color * /

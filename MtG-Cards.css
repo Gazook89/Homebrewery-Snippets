@@ -1,6 +1,6 @@
 
   
-  /*  root variables below for making some quick changes (remove the spaces between comment syntax at end of each line)
+  /*  root variables below for making some quick changes (remove the spaces between comment syntax at end of each line)  */
   
   :root {
   	--page-visibility:visible;  / * hidden or visible * /
@@ -13,7 +13,7 @@
   	--footer-text:'Unofficial Fan Content. Not endorsed by Wizards of the Coast.';   / * text inside apostrophes, ex. 'Please don't sue me'  * /
   }
   
-  */
+  
   
   
   /* page setup */

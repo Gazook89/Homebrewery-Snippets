@@ -15,6 +15,24 @@
   
   @import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,700;1,700&display=swap');
   
+/*   Below are the ROOT variables that can be included in the Homebrewery editor to make some simple changes. 
+Note, there are nested css comments here, and if included in the brew, the space between / and * needs to be removed.
+
+:root {
+  	--punch-hole-color:whitesmoke;   
+  	/ * 	#1B2631 is blue background.
+  		Takes a web, hex, or rgb/rgba value. * /
+  
+  	--main-color:#4F7FAC;  
+  	/ * #4F7FAC is standard light blue.
+  		Takes a web, hex, or rgb/rgba value. * /
+  
+  	--table-row-color:#C5C2BF;
+  	/ * #C5C2BF is standard gray.
+  		Takes a web, hex, or rgb/rgba value. * /
+  }
+*/
+
 /*
 
 █▀█ ▄▀█ █▀▀ █▀▀
@@ -22,8 +40,9 @@
 
 */
   
+  
   .phb {
-  	background:#fdfdfdfd;
+  	background:#fdfdfd;
   	column-gap:25px;
   	color:#212121;
   	padding:20px 70px 50px 30px;
@@ -42,7 +61,7 @@
   	width:50px;
   	height:100%;
   	mix-blend-mode:darken;
-  	background-color:whitesmoke;  /* #1B2631 or white */
+  	background-color:var(--punch-hole-color);
   	transform:scaleX(1);
   }
   
@@ -58,9 +77,7 @@
 	
   }
   
-  /* 
-█▀▀ █▀█ █░█ █▀▀ █▀█   █▀█ ▄▀█ █▀▀ █▀▀
-█▄▄ █▄█ ▀▄▀ ██▄ █▀▄   █▀▀ █▀█ █▄█ ██▄  */
+  /* COVER PAGE  */
   
   .phb .cover ~ h1 {
   	border:none;
@@ -69,16 +86,14 @@
   	color:white;
   	width:70%;
   	margin:auto auto;
-  	background:#4F7FAC;
+  	background:var(--main-color);
   	border-radius:25px;
   	border:4px double white;
   }
   
 
   
-  /* 
-▀█▀ █▀▀ ▀▄▀ ▀█▀
-░█░ ██▄ █░█ ░█░ */
+  /* TEXT */
   
   .phb p {
   	text-align:justify;
@@ -89,7 +104,7 @@
   }
   
   .phb p strong:first-child {
-  	color:#4F7FAC;
+  	color:var(--main-color);
   	margin-right:.8em;
   }
   
@@ -99,7 +114,7 @@
   }
   
   .phb h1 {
-  	color:#4F7FAC;
+  	color:var(--main-color);
   	border-bottom:3px solid #212121;
   	font-family:'Expletus Sans';
   	font-size:30px;
@@ -111,9 +126,9 @@
   .phb h1 + hr {
   	visibility:visible;
   	column-span:all;
-  	color:#4F7FAC;
+  	color:var(--main-color);
   	height:8px;
-  	background:#4F7FAC;
+  	background:var(--main-color);
   	border:none;
   	margin-top:-20px;
   }
@@ -121,16 +136,14 @@
   .phb h2 {
   	font-size:1em;
   	font-family:'booksanity';
-  	color:#4F7FAC;
+  	color:#var(--main-color);
   	letter-spacing:.05em;
   	line-height:2.6em;
   	margin-top:0;
   }	
   
   
-  /*  
-█ █▀▄▀█ ▄▀█ █▀▀ █▀▀ █▀
-█ █░▀░█ █▀█ █▄█ ██▄ ▄█ */
+  /*  IMAGES */
   
   .sticky:before {
   	content:'';
@@ -155,9 +168,7 @@
   }
   
   
-  /* 
-▀█▀ ▄▀█ █▄▄ █░░ █▀▀ █▀
-░█░ █▀█ █▄█ █▄▄ ██▄ ▄█ */
+  /* TABLES */
   
   .phb table {
   	font-family:'booksanity';
@@ -192,9 +203,7 @@
   }
  
   	
-  /* S
-█▀ ▀█▀ ▄▀█ ▀█▀ █▀   ▀█▀ ▄▀█ █▄▄ █░░ █▀▀
-▄█ ░█░ █▀█ ░█░ ▄█   ░█░ █▀█ █▄█ █▄▄ ██▄ */
+  /* Stats Table */
   
 	
   .phb .stats table {
@@ -219,11 +228,11 @@
   }
   
   .phb .stats table tbody tr:nth-child(n+1):nth-child(-n+4) {
-  	background:#C5C2BF;
+  	background:var(--table-row-color);
   }
   
   .phb .stats table:nth-of-type(2) tbody tr:nth-child(n+1):nth-child(-n+7) {
-  	background:#C5C2BF;
+  	background:var(--table-row-color);
   }
   
   .phb .stats table tbody tr td:nth-of-type(1) {
@@ -237,9 +246,7 @@
   }
   
   
-  /* 
-█▀█ █▀█ █░░ █░░   ▀█▀ ▄▀█ █▄▄ █░░ █▀▀
-█▀▄ █▄█ █▄▄ █▄▄   ░█░ █▀█ █▄█ █▄▄ ██▄ */
+  /* Roll Tables */
   
   .phb .rolltable1 {
   	border-top:1px solid #212121;
@@ -261,31 +268,29 @@
   
   
   
-  /* 
-▀█▀ ▄▀█ █▄▄ █░░ █▀▀   █░█ ▄▀█ █▀█ █ ▄▀█ ▀█▀ █ █▀█ █▄░█ █▀
-░█░ █▀█ █▄█ █▄▄ ██▄   ▀▄▀ █▀█ █▀▄ █ █▀█ ░█░ █ █▄█ █░▀█ ▄█  */
+  /* Table Variations  */
   
   .phb .alternating1 table tbody tr:nth-child(2n+1) {
-  	background-color:#C5C2BF;
+  	background-color:var(--table-row-color);
   }
   
   .phb .alternating2 table tbody tr:nth-child(4n+1),.phb .alternating2 table tbody tr:nth-child(4n+2) {
-  	background-color:#C5C2BF;
+  	background-color:var(--table-row-color);
   }
   
   .phb .alternating3 table tbody tr:nth-child(6n+1),.phb .alternating3 table tbody tr:nth-child(6n+2),.phb .alternating3 table tbody tr:nth-child(6n+3) {
-  	background-color:#C5C2BF;
+  	background-color:var(--table-row-color);
   }
   
   .phb .alternating4 table tbody tr:nth-child(8n+1),.phb .alternating4 table tbody tr:nth-child(8n+2),.phb .alternating4 table tbody tr:nth-child(8n+3),.phb .alternating4 table tbody tr:nth-child(8n+4) {
-  	background-color:#C5C2BF;
+  	background-color:var(--table-row-color);
   }
   
   .phb .alternating5 table tbody tr:nth-child(10n+1),.phb .alternating5 table tbody tr:nth-child(10n+2),.phb .alternating5 table tbody tr:nth-child(10n+3),.phb .alternating5 table tbody tr:nth-child(10n+4),.phb .alternating5 table tbody tr:nth-child(10n+5) {
-  	background-color:#C5C2BF;
+  	background-color:var(--table-row-color);
   }
   
   .phb .alternating6 table tbody tr:nth-child(12n+1),.phb .alternating6 table tbody tr:nth-child(12n+2),.phb .alternating6 table tbody tr:nth-child(12n+3),.phb .alternating6 table tbody tr:nth-child(12n+4),.phb .alternating6 table tbody tr:nth-child(12n+5),.phb .alternating6 table tbody tr:nth-child(12n+6) {
-  	background-color:#C5C2BF;
+  	background-color:var(--table-row-color);
   }
  

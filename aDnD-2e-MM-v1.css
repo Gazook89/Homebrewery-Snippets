@@ -136,7 +136,7 @@ Note, there are nested css comments here, and if included in the brew, the space
   .phb h2 {
   	font-size:1em;
   	font-family:'booksanity';
-  	color:#var(--main-color);
+  	color:var(--main-color);
   	letter-spacing:.05em;
   	line-height:2.6em;
   	margin-top:0;

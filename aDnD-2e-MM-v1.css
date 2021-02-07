@@ -1,0 +1,291 @@
+/*  
+- Works best on Chrome.
+- Made by John Jones /u/Gazook89 - [Github](https://github.com/Gazook89/Homebrewery-Snippets/blob/main/aDnD-2e-MM.css) - 2/6/2021
+- Support/Appreciation can be given via [Ko-fi](https://ko-fi.com/johnj)
+- The real font for titles and headers is Friz Quadrata, but it is pricey so a substitution has been made.
+- I recommend [TablesGenerator.com](https://www.tablesgenerator.com/markdown_tables#) for making your tables.
+- Help can be found on [r/homebrewery](https://www.reddit.com/r/homebrewery)
+- Template/Theme free for personal and  commercial use, with attribution for commercial use.  No guarantees. 
+*/
+
+
+
+
+/* The real font is Friz Quadrata Bold, but it is pricey and I couldn't find an open source version of it.  Below is a compromise font */
+  
+  @import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,700;1,700&display=swap');
+  
+/*
+
+█▀█ ▄▀█ █▀▀ █▀▀
+█▀▀ █▀█ █▄█ ██▄
+
+*/
+  
+  .phb {
+  	background:#fdfdfdfd;
+  	column-gap:25px;
+  	color:#212121;
+  	padding:20px 70px 50px 30px;
+  }
+  
+  .phb:nth-of-type(2n) {
+  	padding:20px 30px 50px 70px;
+  }
+  
+  .phb:after {
+  	background-image:url('https://i.imgur.com/U5Cr0T4.png');
+  	left:unset;
+  	right:20px;
+  	bottom:unset;
+  	top:0;
+  	width:50px;
+  	height:100%;
+  	mix-blend-mode:darken;
+  	background-color:whitesmoke;  /* #1B2631 or white */
+  	transform:scaleX(1);
+  }
+  
+  .phb:nth-of-type(2n):after {
+  	left:15px;
+  	right:unset;
+  	transform:scaleX(1);
+  }
+  
+  .flexbox {
+  	display:flex;
+  	flex-wrap:wrap;
+	
+  }
+  
+  /* 
+█▀▀ █▀█ █░█ █▀▀ █▀█   █▀█ ▄▀█ █▀▀ █▀▀
+█▄▄ █▄█ ▀▄▀ ██▄ █▀▄   █▀▀ █▀█ █▄█ ██▄  */
+  
+  .phb .cover ~ h1 {
+  	border:none;
+  	text-align:center;
+  	font-size:40px;
+  	color:white;
+  	width:70%;
+  	margin:auto auto;
+  	background:#4F7FAC;
+  	border-radius:25px;
+  	border:4px double white;
+  }
+  
+
+  
+  /* 
+▀█▀ █▀▀ ▀▄▀ ▀█▀
+░█░ ██▄ █░█ ░█░ */
+  
+  .phb p {
+  	text-align:justify;
+  	-webkit-column-break-inside:unset;
+  	break-inside:unset;
+  	page-break-inside:unset;
+  	padding-bottom:.7em;
+  }
+  
+  .phb p strong:first-child {
+  	color:#4F7FAC;
+  	margin-right:.8em;
+  }
+  
+  
+  .phb h1 + p:first-letter {
+  	all:unset;
+  }
+  
+  .phb h1 {
+  	color:#4F7FAC;
+  	border-bottom:3px solid #212121;
+  	font-family:'Expletus Sans';
+  	font-size:30px;
+  	padding:3px;
+  	margin: 0px 0px 35px 5px;
+  	
+  }
+  
+  .phb h1 + hr {
+  	visibility:visible;
+  	column-span:all;
+  	color:#4F7FAC;
+  	height:8px;
+  	background:#4F7FAC;
+  	border:none;
+  	margin-top:-20px;
+  }
+  
+  .phb h2 {
+  	font-size:1em;
+  	font-family:'booksanity';
+  	color:#4F7FAC;
+  	letter-spacing:.05em;
+  	line-height:2.6em;
+  	margin-top:0;
+  }	
+  
+  
+  /*  
+█ █▀▄▀█ ▄▀█ █▀▀ █▀▀ █▀
+█ █░▀░█ █▀█ █▄█ ██▄ ▄█ */
+  
+  .sticky:before {
+  	content:'';
+  	display:block;
+  	float:left;
+  	height:var(--position-px);
+  }
+  
+  .main-image  .frame {
+  	position:relative;
+  	overflow:hidden;
+	float:right;
+  	width:100%;
+  	height:300px;
+  	clear:both;
+  	margin:0px 0px 9px 0px;
+  	mix-blend-mode:darken;
+  	border:2px solid #212121;
+	filter:grayscale(100%) contrast(120%) brightness(120%);
+  	background-repeat:no-repeat;
+  	box-shadow:inset 0px 0px 1px 2px white;
+  }
+  
+  
+  /* 
+▀█▀ ▄▀█ █▄▄ █░░ █▀▀ █▀
+░█░ █▀█ █▄█ █▄▄ ██▄ ▄█ */
+  
+  .phb table {
+  	font-family:'booksanity';
+  	font-size:1em;
+  }
+ 
+  .phb  table tbody tr:nth-child(odd) {
+  	background:none;
+  
+  }
+  
+  .phb table tbody td {
+  	width:500px;
+  }
+  
+  .phb table tbody tr:first-child td {
+  	padding-top:0px;
+  }
+  
+  .phb table thead th {
+  	padding:12px 5px 2px 5px;
+  	text-transform:capitalize;
+  }
+  
+  .phb table thead th:empty {
+  	visiblity:hidden;
+  	padding:2px 5px
+  }
+  
+  .phb table tbody tr td {
+	padding: 1px 5px;
+  }
+ 
+  	
+  /* S
+█▀ ▀█▀ ▄▀█ ▀█▀ █▀   ▀█▀ ▄▀█ █▄▄ █░░ █▀▀
+▄█ ░█░ █▀█ ░█░ ▄█   ░█░ █▀█ █▄█ █▄▄ ██▄ */
+  
+	
+  .phb .stats table {
+  }
+  
+  .phb .stats table + table:before {
+  	content:'';
+  	display:table-caption;
+  	height:1px;
+  	background:#212121;
+  	margin-bottom:2px;
+  	margin-left:5px;
+  	margin-right:0px;
+  }
+  
+  .phb .stats table tbody tr:first-child td {
+	padding-top: 6px;
+  }
+  
+  .phb .stats table tbody tr:nth-child(2n+1) {
+  	background:none;
+  }
+  
+  .phb .stats table tbody tr:nth-child(n+1):nth-child(-n+4) {
+  	background:#C5C2BF;
+  }
+  
+  .phb .stats table:nth-of-type(2) tbody tr:nth-child(n+1):nth-child(-n+7) {
+  	background:#C5C2BF;
+  }
+  
+  .phb .stats table tbody tr td:nth-of-type(1) {
+  	text-transform:uppercase;
+  	font-weight:bold;
+  	width:240px;
+  }
+  
+  .phb .stats table tbody td:nth-of-type(1):after {
+  	content:':'
+  }
+  
+  
+  /* 
+█▀█ █▀█ █░░ █░░   ▀█▀ ▄▀█ █▄▄ █░░ █▀▀
+█▀▄ █▄█ █▄▄ █▄▄   ░█░ █▀█ █▄█ █▄▄ ██▄ */
+  
+  .phb .rolltable1 {
+  	border-top:1px solid #212121;
+  	border-bottom:1px solid #212121;
+  	margin:2px 5px;
+  	padding:0 5px;
+  	flex:1 1;
+  }
+  
+  .phb .rolltable1 h2 + table thead th {
+  	margin-top:0;
+  	padding-top:0;
+  }
+  
+  .phb .rolltable1 h2  {
+  	line-height:1.5em;
+ 
+  }
+  
+  
+  
+  /* 
+▀█▀ ▄▀█ █▄▄ █░░ █▀▀   █░█ ▄▀█ █▀█ █ ▄▀█ ▀█▀ █ █▀█ █▄░█ █▀
+░█░ █▀█ █▄█ █▄▄ ██▄   ▀▄▀ █▀█ █▀▄ █ █▀█ ░█░ █ █▄█ █░▀█ ▄█  */
+  
+  .phb .alternating1 table tbody tr:nth-child(2n+1) {
+  	background-color:#C5C2BF;
+  }
+  
+  .phb .alternating2 table tbody tr:nth-child(4n+1),.phb .alternating2 table tbody tr:nth-child(4n+2) {
+  	background-color:#C5C2BF;
+  }
+  
+  .phb .alternating3 table tbody tr:nth-child(6n+1),.phb .alternating3 table tbody tr:nth-child(6n+2),.phb .alternating3 table tbody tr:nth-child(6n+3) {
+  	background-color:#C5C2BF;
+  }
+  
+  .phb .alternating4 table tbody tr:nth-child(8n+1),.phb .alternating4 table tbody tr:nth-child(8n+2),.phb .alternating4 table tbody tr:nth-child(8n+3),.phb .alternating4 table tbody tr:nth-child(8n+4) {
+  	background-color:#C5C2BF;
+  }
+  
+  .phb .alternating5 table tbody tr:nth-child(10n+1),.phb .alternating5 table tbody tr:nth-child(10n+2),.phb .alternating5 table tbody tr:nth-child(10n+3),.phb .alternating5 table tbody tr:nth-child(10n+4),.phb .alternating5 table tbody tr:nth-child(10n+5) {
+  	background-color:#C5C2BF;
+  }
+  
+  .phb .alternating6 table tbody tr:nth-child(12n+1),.phb .alternating6 table tbody tr:nth-child(12n+2),.phb .alternating6 table tbody tr:nth-child(12n+3),.phb .alternating6 table tbody tr:nth-child(12n+4),.phb .alternating6 table tbody tr:nth-child(12n+5),.phb .alternating6 table tbody tr:nth-child(12n+6) {
+  	background-color:#C5C2BF;
+  }
+ 

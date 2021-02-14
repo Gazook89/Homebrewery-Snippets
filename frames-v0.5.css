@@ -1,6 +1,9 @@
+.picture {
+  	overflow:hidden;
+  }
+  
   .frame {
   	position:absolute;
-  	overflow:hidden;
   
   }
   

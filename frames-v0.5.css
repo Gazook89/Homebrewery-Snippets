@@ -4,9 +4,13 @@
   
   }
   
-  .relative {
+  /* set the frame as positioned relative */
+  
+  .relative {   
   	position:relative !important;
   }
+  
+  /*  have frame cover an entire page */
   
   .frame.whole {
   	top:0 !important;
@@ -300,5 +304,13 @@
   
   .frame.gray:after {
   	filter:sepia(0%) brightness(2400%) saturate(0%);
+  }
+  
+ .frame:before {
+  	content: attr(data-credit);
+  	position:absolute;
+  	bottom:8%;
+  	right:5%;
+  	opacity:50%;
   }
   

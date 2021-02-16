@@ -316,4 +316,44 @@
   	right:5%;
   	opacity:50%;
   }
+
+/*  watercolor frames */
+
+.wcFrame {
+  	position:absolute;
+    -webkit-mask-repeat:no-repeat;
+    -webkit-mask-size:contain;
+    -webkit-mask-position:center;
+  	
+  }
+  
+  .wcImage {
+  	position:absolute;
+  }
+  
+  .wcFrame.circle1 {
+  	-webkit-mask-image:url('https://i.imgur.com/rVTIXGr.png');
+  }
+  
+  .wcFrame.circle2 {
+  	-webkit-mask-image:url('https://i.imgur.com/A2saYTi.png');
+  }
+  
+  .wcFrame.left {
+  	-webkit-mask-image:url('https://i.imgur.com/ciLZuBc.png');
+  }
+  
+  .wcFrame.top {
+  	-webkit-mask-image:url('https://i.imgur.com/ghviFil.png');
+  	mask-type:alpha;
+  }
+
+/*  "flamable" masks */
+
+  .phb .wcFrame.flamable {
+  	mask-mode:alpha;
+  	-webkit-mask-image:url('https://i.imgur.com/FEeo4eq.png');
+  	-webkit-mask-size:100%;
+  	
+  }
   

@@ -92,9 +92,8 @@
 	background-position:center;
 	background-repeat:no-repeat;
 	background-size:contain;
-	filter:invert(100%);
 	flex:1 1 100%;
 	height:100px;
 	margin-top:10px;
-	mix-blend-mode:lighten;
+	mix-blend-mode:;
 }

@@ -1,0 +1,139 @@
+
+
+:root {
+	--blur:4px;
+	--background-image:url(https://i.imgur.com/7jlQ0ph.jpg);
+	--background-color:#42664E;
+	--card-position:center;
+	--logo-image:url(https://i.imgur.com/hq0SgYC.png);
+	--border-color:black;
+	--border-blur:13px;
+	--text-color:goldenrod;
+	--title-spacing:3px;
+	--drop-shadow:0px 5px 10px black;
+}
+
+.phb#p1 {
+	columns:unset;
+	display:grid;
+  grid: [row1-start] "top top top" 1fr [row1-end]
+        [row2-start] "left center right" 3fr [row2-end]
+				[row3-start] "bottom bottom bottom" 1fr [row3-end]
+        / 1fr 4fr 1fr;
+	padding:50px;
+}
+
+.phb#p1:before {
+	content:'';
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	background-image:var(--background-image);
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	transform:scale(1.05);
+	filter: blur(var(--blur));
+	
+}
+
+.phb#p1:after {
+	display:none;	
+}
+
+.phb#p1 > p {
+	display:none;
+}
+
+.phb#p1 #classical {
+	grid-area:var(--card-position);
+	display:flex;
+	flex-direction:column;	
+	padding:2% 40px 5% 40px;
+	position:relative;
+	text-align:center;
+}
+
+.phb#p1 #classical.solid {
+	background:var(--background-color);
+	filter:drop-shadow(-1px -1px 0 var(--border-color)) drop-shadow(-1px 1px 0 var(--border-color)) drop-shadow(1px 1px 0 var(--border-color)) drop-shadow(1px -1px 0 var(--border-color)) drop-shadow(var(--drop-shadow));
+}
+
+/* if using a transparent color for background, set class to transparent to get rid of the border (which is actually created with a drop-shadow) and be sure to use a transparent .png image */
+
+.phb#p1 #classical.transparent {
+	background:var(--background-color);
+}
+
+
+.phb#p1 #classical:before {
+	content:'';
+	position:absolute;
+	top:-50px;
+	left:50%;
+	transform:translateX(-50%);
+	width: 0;
+      height: 4%;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 50px solid var(--background-color);
+}
+
+.phb#p1 #classical:after {
+	content:'';
+	position:absolute;
+	bottom:-50px;
+	left:50%;
+	transform:translateX(-50%);
+	width: 0;
+	height: 4%;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 50px solid var(--background-color);
+}
+
+.phb#p1 #classical #logo {
+	flex:1 0 50px ;
+	background-image:var(--logo-image);
+	background-position:center;
+	background-size:contain;
+	background-repeat:no-repeat;
+	height:max(300px,100%);
+	margin-top:10px;
+}
+
+.phb#p1 #classical h1 {
+	color:var(--text-color);	
+	justify-self:flex-start;
+	font-size:;
+	margin:0;
+	letter-spacing:var(--title-spacing);
+	
+}
+
+.phb#p1 #classical h2 {
+	color:var(--text-color);
+	margin:0;
+}
+
+.phb#p1 #classical p {
+	border-bottom:2px solid var(--border-color);
+	color:var(--text-color);
+	font-size:20px;
+	margin:2% 0;
+	padding-bottom:1%;
+	font-variant:small-caps
+}
+
+
+.phb#p1 #classical #logo {
+	mix-blend-mode:multiply;
+}
+
+.phb#p1 #classical.small {
+	
+}
+
+/* lighthouse vector created by pch.vector - www.freepik.com  */

@@ -56,6 +56,18 @@
 	text-align:center;
 }
 
+.phb#p1 #classical.top {
+	grid-area:top;
+}
+
+.phb#p1 #classical.center {
+	grid-area:center;
+}
+
+.phb#p1 #classical.bottom {
+	grid-area:bottom;
+}
+
 .phb#p1 #classical.solid {
 	background:var(--background-color);
 	filter:drop-shadow(-1px -1px 0 var(--border-color)) drop-shadow(-1px 1px 0 var(--border-color)) drop-shadow(1px 1px 0 var(--border-color)) drop-shadow(1px -1px 0 var(--border-color)) drop-shadow(var(--drop-shadow));

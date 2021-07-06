@@ -1,0 +1,215 @@
+:root {
+	--stripe-text:'Homebrew \A Module for D&D'; /* use \A to create line break */
+	--text-font:futura;	
+	--text-color-1:white;
+	--text-color-2:#FDE219;
+	--background-color:#018D34;
+	--logo-image:url(https://i.ytimg.com/vi/ylMNGG7pKis/maxresdefault.jpg);
+}
+
+.phb#p1:after {
+	display:none;
+}
+
+.phb#p1 #module-80:after {
+	content:var(--stripe-text);  /* use \A to create line break */
+	text-align:center;
+	background:var(--text-color-2);
+	color:var(--background-color);
+	top:40px;
+	left:-126px;
+	width:400px;
+	height:38px;
+	transform:rotate(-45deg);
+	font-family:helvetica;
+	text-transform:uppercase;
+	font-weight:bold;
+	font-size:22px;
+	padding: 11px 0px;
+	white-space: pre;
+	position:absolute;
+}
+
+.phb#p1 {
+	columns:unset;
+	padding:61px 60px;
+	background:unset;
+	background-size:cover
+}
+
+.phb#p1 #module-80:before {
+		content:'';
+		position:absolute;
+		width:100%;
+		height:100%;
+		top:0;
+		left:0;
+		z-index:-1;
+		background:var(--background-color);
+}
+
+.phb#p1 #module-80 #logo {
+	background:var(--logo-image);
+	background-size:cover;
+	background-position:center;
+	height:448px;
+	margin-top:29px;
+	margin-bottom:20px
+}
+
+.phb#p1 #module-80 h1 {
+	color:var(--text-color-1);
+	font-family:var(--text-font);
+	font-size:32px;
+	text-align:center;
+	margin:unset;
+	line-height:1.3em
+}
+
+.phb#p1 #module-80 h2 {
+	color:var(--text-color-2);
+	font-family:var(--text-font);
+	font-size:32px;
+	text-align:center;
+	margin:unset;
+	margin-bottom:7px
+}
+
+.phb#p1 #module-80 h3 {
+	border:unset;
+	color:var(--text-color-1);
+	font-family:var(--text-font);
+	font-size:23px;
+	text-align:center;
+	margin:unset;
+	line-height:1.2em
+}
+
+.phb#p1 #module-80 h3 strong {
+	border:unset;
+	color:var(--text-color-1);
+	font-family:var(--text-font);
+	font-size:24px;
+	text-align:center;
+	margin:unset;
+	text-transform:uppercase;
+}
+
+
+
+.phb#p1 #module-80 #logo ~ p {
+	color:var(--text-color-1);
+	font-style:italic;
+	text-align:justify;
+}
+
+.phb#p1 #module-80 #logo ~ p + p {
+	text-indent:unset;
+}
+
+
+.phb#p1 #module-80 p {
+	color:var(--text-color-1);
+	text-align:center;
+	font-family:var(--text-font);
+	font-weight:600;
+	margin-bottom:10px
+}
+
+/*
+Ranger*/
+
+.phb#p1 #module-80.ranger {
+	--text-font:futura;	
+	--text-color-1:white;
+	--text-color-2:#FDE219;
+	--background-color:#018D34;
+}
+
+/*
+mook*/
+
+.phb#p1 #module-80.mook {
+	--text-font:futura;	
+	--text-color-1:#ddd;
+	--text-color-2:#aaa;
+	--background-color:#212121;
+}
+
+/*
+shaman*/
+
+.phb#p1 #module-80.shaman {
+	--text-font:futura;	
+	--text-color-1:#11ddaa;
+	--text-color-2:#77aa44;
+	--background-color:#e22;
+}
+
+/*
+druid*/
+
+.phb#p1 #module-80.druid {
+	--text-font:futura;	
+	--text-color-1:#cd4;
+	--text-color-2:#e22e22;
+	--background-color:#69d;
+}
+
+/*
+grayscale*/
+
+.phb#p1 #module-80.bw {
+	--text-font:futura;	
+	--text-color-1:black;
+	--text-color-2:gray;
+	--background-color:white;	
+}
+
+.phb#p1 #module-80.bw #logo {
+	filter:grayscale(100%);	
+}
+
+
+
+/*
+Logo Effects*/
+
+#logo.watercolor {
+  background-image: var(--logo-image);
+  background-size: cover;
+  background-position: center;
+}
+
+@supports (filter: blur(2px)) and (mix-blend-mode: multiply) {
+  #logo.watercolor {
+    position: relative;
+    overflow: hidden;
+  }
+  #logo.watercolor:before, #logo.watercolor:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+  }
+  #logo.watercolor:before {
+    background-image: var(--logo-image), var(--logo-image);
+    background-blend-mode: difference;
+    background-position: calc(50% - 1px) calc(50% - 1px), calc(50% + 1px) calc(50% + 1px);
+    filter: brightness(2) invert(1) grayscale(1);
+    box-shadow: inset 0 0 0 1px black;
+  }
+  #logo.watercolor:after {
+    background-image: var(--logo-image);
+    background-position: center;
+    mix-blend-mode: multiply;
+    filter: brightness(1.3) blur(2px) contrast(2);
+  }
+}
+
+
+

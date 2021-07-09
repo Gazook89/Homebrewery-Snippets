@@ -1,12 +1,12 @@
 :root {
 	--blur:4px;
 	--background-image:url(https://i.imgur.com/7jlQ0ph.jpg);
-	--background-color:#42664Eaa;
+	--background-color:antiquewhite;
 	--card-position:center;
 	--logo-image:url(https://i.imgur.com/hq0SgYC.png);
 	--border-color:black;
 	--border-blur:13px;
-	--text-color:goldenrod;
+	--text-color:black;
 	--title-spacing:3px;
 	--drop-shadow:0px 5px 10px black;
 	--triangle-size:40px;
@@ -53,6 +53,7 @@
 	padding:2% 40px 5% 40px;
 	position:relative;
 	text-align:center;
+	background:var(--background-color);
 }
 
 .phb#p1 #classical.top {

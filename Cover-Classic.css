@@ -1,9 +1,7 @@
-
-
 :root {
 	--blur:4px;
 	--background-image:url(https://i.imgur.com/7jlQ0ph.jpg);
-	--background-color:#42664E;
+	--background-color:#42664Eaa;
 	--card-position:center;
 	--logo-image:url(https://i.imgur.com/hq0SgYC.png);
 	--border-color:black;
@@ -11,6 +9,7 @@
 	--text-color:goldenrod;
 	--title-spacing:3px;
 	--drop-shadow:0px 5px 10px black;
+	--triangle-size:40px;
 }
 
 .phb#p1 {
@@ -83,27 +82,27 @@
 .phb#p1 #classical:before {
 	content:'';
 	position:absolute;
-	top:-50px;
+	top:calc(0px - var(--triangle-size));
 	left:50%;
 	transform:translateX(-50%);
 	width: 0;
-      height: 4%;
-      border-left: 50px solid transparent;
-      border-right: 50px solid transparent;
-      border-bottom: 50px solid var(--background-color);
+      height: 0;
+      border-left: var(--triangle-size) solid transparent;
+      border-right: var(--triangle-size) solid transparent;
+      border-bottom: var(--triangle-size) solid var(--background-color);
 }
 
 .phb#p1 #classical:after {
 	content:'';
 	position:absolute;
-	bottom:-50px;
+	bottom:calc(0px - var(--triangle-size));
 	left:50%;
 	transform:translateX(-50%);
 	width: 0;
-	height: 4%;
-	border-left: 50px solid transparent;
-	border-right: 50px solid transparent;
-	border-top: 50px solid var(--background-color);
+	height: 0px;
+	border-left: var(--triangle-size) solid transparent;
+	border-right: var(--triangle-size) solid transparent;
+	border-top: var(--triangle-size) solid var(--background-color);
 }
 
 .phb#p1 #classical #logo {

@@ -1,0 +1,150 @@
+/* A book cover style for a brew cover page. It only applies to the first page of a brew document. */
+
+:root {
+	--cp-blur:4px;
+	--cp-background-image:url(https://i.imgur.com/7jlQ0ph.jpg);
+	--cp-background-color:antiquewhite;
+	--cp-card-position:center;
+	--cp-logo-image:url(https://i.imgur.com/hq0SgYC.png);
+	--cp-border-color:black;
+	--cp-border-blur:13px;
+	--cp-text-color:black;
+	--cp-title-spacing:3px;
+	--cp-drop-shadow:0px 5px 10px black;
+	--cp-triangle-size:40px;
+}
+
+.phb#p1, .phb3#p1 {
+	columns:unset;
+	display:grid;
+  grid: [row1-start] "top top top" 1fr [row1-end]
+        [row2-start] "left center right" 3fr [row2-end]
+				[row3-start] "bottom bottom bottom" 1fr [row3-end]
+        / 1fr 4fr 1fr;
+	padding:50px;
+}
+
+.phb#p1:before, .phb3#p1:before {
+	content:'';
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	background-image:var(--cp-background-image);
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	transform:scale(1.05);
+	filter: blur(var(--cp-blur));
+	
+}
+
+.phb#p1:after, .phb3#p1:after {
+	display:none;	
+}
+
+.phb#p1 > p, .phb3#p1 > p {
+	display:none;
+}
+
+.phb#p1 #classical, .phb3#p1 #classical {
+	grid-area:var(--cp-card-position);
+	display:flex;
+	flex-direction:column;	
+	padding:2% 40px 5% 40px;
+	position:relative;
+	text-align:center;
+	background:var(--cp-background-color);
+}
+
+.phb#p1 #classical.top, .phb3#p1 #classical.top {
+	grid-area:top;
+}
+
+.phb#p1 #classical.center, .phb3#p1 #classical.center {
+	grid-area:center;
+}
+
+.phb#p1 #classical.bottom, .phb3#p1 #classical.bottom {
+	grid-area:bottom;
+}
+
+.phb#p1 #classical.solid, .phb3#p1 #classical.solid {
+	background:var(--cp-background-color);
+	filter:drop-shadow(-1px -1px 0 var(--cp-border-color)) drop-shadow(-1px 1px 0 var(--cp-border-color)) drop-shadow(1px 1px 0 var(--cp-border-color)) drop-shadow(1px -1px 0 var(--cp-border-color)) drop-shadow(var(--cp-drop-shadow));
+}
+
+/* if using a transparent color for background, set class to transparent to get rid of the border (which is actually created with a drop-shadow) and be sure to use a transparent .png image */
+
+.phb#p1 #classical.transparent, .phb3#p1 #classical.transparent {
+	background:var(--cp-background-color);
+}
+
+
+.phb#p1 #classical:before, .phb3#p1 #classical:before {
+	content:'';
+	position:absolute;
+	top:calc(0px - var(--cp-triangle-size));
+	left:50%;
+	transform:translateX(-50%);
+	width: 0;
+      height: 0;
+      border-left: var(--cp-triangle-size) solid transparent;
+      border-right: var(--cp-triangle-size) solid transparent;
+      border-bottom: var(--cp-triangle-size) solid var(--cp-background-color);
+}
+
+.phb#p1 #classical:after, .phb3#p1 #classical:after {
+	content:'';
+	position:absolute;
+	bottom:calc(0px - var(--cp-triangle-size));
+	left:50%;
+	transform:translateX(-50%);
+	width: 0;
+	height: 0px;
+	border-left: var(--cp-triangle-size) solid transparent;
+	border-right: var(--cp-triangle-size) solid transparent;
+	border-top: var(--cp-cp-triangle-size) solid var(--cp-background-color);
+}
+
+.phb#p1 #classical #logo, .phb3#p1 #classical #logo {
+	flex:1 0 50px ;
+	background-image:var(--cp-logo-image);
+	background-position:center;
+	background-size:contain;
+	background-repeat:no-repeat;
+	height:max(300px,100%);
+	margin-top:10px;
+}
+
+.phb#p1 #classical h1, .phb3#p1 #classical h1 {
+	color:var(--cp-text-color);	
+	justify-self:flex-start;
+	font-size:;
+	margin:0;
+	letter-spacing:var(--cp-title-spacing);
+	
+}
+
+.phb#p1 #classical h2, .phb3#p1 #classical h2 {
+	color:var(--cp-text-color);
+	margin:0;
+}
+
+.phb#p1 #classical p, .phb3#p1 #classical p {
+	border-bottom:2px solid var(--cp-border-color);
+	color:var(--cp-text-color);
+	font-size:20px;
+	margin:2% 0;
+	padding-bottom:1%;
+	font-variant:small-caps
+}
+
+
+.phb#p1 #classical #logo, .phb3#p1 #classical #logo {
+	mix-blend-mode:multiply;
+}
+
+
+/* lighthouse vector created by pch.vector - www.freepik.com  */

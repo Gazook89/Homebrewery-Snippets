@@ -1,4 +1,5 @@
 /* A book cover style for a brew cover page. It only applies to the first page of a brew document. */
+/* Updated 7/15/21 to include v3 Homebrewery. */
 
 :root {
 	--cp-blur:4px;

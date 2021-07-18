@@ -10,7 +10,8 @@ The Root Variables
 --cp-title-spacing: choose a pixel quantity (e.g. 3px) to set the spacing between letters in your title, in case you want to increase the spread.
 
 Preset Styles
-This Cover Page snippet includes a few pre-made styles with values already chosen for the root variables.  These can be overridden partially or completely by entering your own root variables as described above.
+This Cover Page snippet includes a few pre-made styles with values already chosen for the root variables.  These can be overridden partially or completely by using your own further CSS.
+** IF A CLASS IS SET, ROOT VARIABLES WILL BE IGNORED...instead, use your own CSS rules--- they need to have equal or higher 'specificity' than the rules describing the classes **
 To choose a preset, include the below 'class' to the class attribute of the first <div> in your markdown/html (e.g.  <div id='title-box' class='red'>)
 CLASS : DESCRIPTION
 mirage : orangish to pinkish, white text

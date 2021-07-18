@@ -1,0 +1,210 @@
+/* Cover Page - Manuscript */
+
+/* Help Section
+The Manuscript style cover page is a simple radial gradient between two colors, with a flat style text.  It is simple and easy to make look clean.
+
+The Root Variables
+--cp-text-color, --cp-bg-color-1 / 2:  Must be a color value, which can be in the forms "red", #ff000, or rgb(255,0,0)
+--cp-logo-image: insert the URL of an image you want display below the title.  A .png with a transparent background will likely work best, and especially simple line art.
+--cp-title-font, --cp-subtitle-font, --cp-base-text-font:  choose a font-family such as "arial" which is 'web-safe', meaning very few people will have issues seeing that font; or, @import your own font.
+--cp-title-spacing: choose a pixel quantity (e.g. 3px) to set the spacing between letters in your title, in case you want to increase the spread.
+
+Preset Styles
+This Cover Page snippet includes a few pre-made styles with values already chosen for the root variables.  These can be overridden partially or completely by entering your own root variables as described above.
+To choose a preset, include the below 'class' to the class attribute of the first <div> in your markdown/html (e.g.  <div id='title-box' class='red'>)
+CLASS : DESCRIPTION
+mirage : orangish to pinkish, white text
+honey: yellowish to orangish, black text
+sky: light blue to blue, white text
+sherwood: greenish to brownish, gold text, cursive title
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Quattrocento:wght@400;700&display=swap');
+
+/* Cover Page Variables [Manuscript] */
+:root {
+	--cp-text-color:black;  
+	--cp-bg-color-1: white;  
+	--cp-bg-color-2:  white;  
+	--cp-logo-image:url('https://i.imgur.com/hq0SgYC.png');
+	--cp-title-font:;
+	--cp-subtitle-font:;
+	--cp-base-text-font:;
+	--cp-title-spacing:;
+	
+}
+
+.page#p1 {
+	columns:unset;
+	padding:0;
+	background: linear-gradient(200deg, var(--cp-bg-color-1) 40%, var(--cp-bg-color-2) 100%);
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.page#p1 > p {
+	display:none;	
+}
+
+.page#p1:after {
+	display:none;	
+}
+
+.page#p1 #title-box  {
+	text-align:center;
+	display:flex;
+	flex-direction:column;
+	padding:40px
+}
+
+.page#p1 #logo {
+	flex:1 0 350px ;
+	background-image:var(--cp-logo-image);
+	background-position:center;
+	background-size:contain;
+	background-repeat:no-repeat;
+	height:max(300px,100%);	
+	mix-blend-mode:multiply;
+	margin:20px;
+}
+
+.page#p1 #title-box h1 {
+	color:var(--cp-text-color);
+	font-family:var(--cp-title-font);
+	letter-spacing:var(--cp-title-spacing);
+}
+
+.page#p1 #title-box h2 {
+	color:var(--cp-text-color);
+	font-family:var(--cp-subtitle-font);
+}
+
+.page#p1 #title-box p {
+	color:var(--cp-text-color);
+	font-family:var(--cp-base-text-font);
+	font-variant:small-caps;
+}
+
+.page#p1 #title-box:before {
+		content:'';
+		position:absolute;
+		width:100%;
+		height:100%;
+		top:0;
+		left:0;
+		z-index:-1
+}
+
+.page#p1 #title-box:after {
+		content:'';
+		position:absolute;
+		z-index:-1;
+		width:auto;
+		height:auto;
+		top:-4px;
+		left:-4px;
+		bottom:0;
+		right:0;
+		border-image:url('https://i.imgur.com/k544p79.png');
+		border-image-slice:25% 10%;
+		border-image-width:90px;
+		border-image-repeat:stretch;
+		border-image-outset:10px;
+	
+}
+
+/*
+█▀▄▀█ █ █▀█ ▄▀█ █▀▀ █▀▀
+█░▀░█ █ █▀▄ █▀█ █▄█ ██▄*/
+
+.page#p1 #title-box.mirage {
+		--cp-text-color:white;
+}
+
+.page#p1 #title-box.mirage:before {
+		background: linear-gradient(200deg, #EF5726 40%, #C12172 100%);
+}
+
+.page#p1 #title-box.mirage:after {
+		filter:invert(1)
+}
+
+.page#p1 #title-box.mirage #logo {
+	filter:invert(1);
+	mix-blend-mode:screen;
+}
+
+
+/*
+█░█ █▀█ █▄░█ █▀▀ █▄█
+█▀█ █▄█ █░▀█ ██▄ ░█░*/
+
+.page#p1 #title-box.honey:before {
+		background: linear-gradient(200deg, #F9DF34 40%, #F96234 100%);
+}
+
+.page#p1 #title-box.honey:after {
+		filter:invert(0);
+}
+
+.page#p1 #title-box.honey #logo {
+	filter:invert(0);
+	mix-blend-mode:multiply;
+}
+
+/*
+█▀ █▄▀ █▄█
+▄█ █░█ ░█░*/
+
+.page#p1 #title-box.sky {
+		--cp-text-color:white;
+}
+
+.page#p1 #title-box.sky:before {
+		background: linear-gradient(200deg, #73A2DB 40%, #4679B6 100%);
+}
+
+.page#p1 #title-box.sky:after {
+		filter:invert(1)
+}
+
+.page#p1 #title-box.sky #logo {
+	filter:invert(1);
+	mix-blend-mode:screen;
+}
+
+/*
+█▀ █░█ █▀▀ █▀█ █░█░█ █▀█ █▀█ █▀▄
+▄█ █▀█ ██▄ █▀▄ ▀▄▀▄▀ █▄█ █▄█ █▄▀*/
+
+.page#p1 #title-box.sherwood {
+		--cp-text-color:gold;
+}
+
+.page#p1 #title-box.sherwood:before {
+		background: linear-gradient(200deg, #1D5611 40%, #38260E 100%);
+}
+
+.page#p1 #title-box.sherwood:after {
+		filter:invert(1) sepia(1)  brightness(100%) saturate(1700%) hue-rotate(-30deg) ;
+}
+
+.page#p1 #title-box.sherwood #logo {
+	filter:invert(1) sepia(1) saturate(500%) brightness(90%);
+	mix-blend-mode:screen;
+	margin:20px;
+}
+
+.page#p1 #title-box.sherwood h1 {
+	font-family:Merienda;
+	font-size:48px;
+}
+
+.page#p1 #title-box.sherwood h2 {
+	font-family:Quattrocento;
+	font-weight:unset;
+}
+
+

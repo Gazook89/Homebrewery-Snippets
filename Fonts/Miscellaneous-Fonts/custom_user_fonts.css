@@ -4,8 +4,9 @@
 
 @font-face {
     font-family: 'cromregular';
-    src: url('crom_v1-webfont.woff2') format('woff2');
+    src: url('./crom_v1-webfont.woff2');
     font-weight: normal;
     font-style: normal;
 
 }
+

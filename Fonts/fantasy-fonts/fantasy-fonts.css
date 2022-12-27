@@ -22,21 +22,21 @@
 
 @font-face {
     font-family: 'hamlet cicero';
-    src: url('hamlet-cicero12-webfont.woff2');
+    src: url('./hamlet-cicero12-webfont.woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'hamlet tertia';
-    src: url('hamlet-tertia18-webfont.woff2');
+    src: url('./hamlet-tertia18-webfont.woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'beyond_wonderlandregular';
-    src: url('beyond-wonderland.regular-webfont.woff2');
+    src: url('./beyond-wonderland.regular-webfont.woff2');
     font-weight: normal;
     font-style: normal;
 }

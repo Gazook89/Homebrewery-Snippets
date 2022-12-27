@@ -1,0 +1,22 @@
+
+@font-face {
+    font-family: 'Crom Regular';
+    src: url('./crom_v1-webfont.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'hamletregular';
+    src: url('./hamletregular-webfont.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'primitive';
+    src: url('./primitive-webfont.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+

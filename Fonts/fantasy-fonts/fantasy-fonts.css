@@ -7,10 +7,11 @@
 }
 
 @font-face {
-    font-family: 'Hamlet';
+    font-family: 'Hamlet Regular';
     src: url('./hamletregular-webfont.woff2');
     font-weight: normal;
     font-style: normal;
+
 }
 
 @font-face {

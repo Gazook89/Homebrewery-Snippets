@@ -4,3 +4,14 @@
     font-weight: normal;
     font-style: normal;
 }
+
+/* Kagome Regular/Free
+- free for personal use, free for commercial use with credit to Ezequïel Ergö
+- [DeviantArt.com](https://www.deviantart.com/ergohiki/art/Kagome-FREE-FONT-514365614)
+*/
+@font-face {
+    font-family: 'Kagome Regular';
+    src: url('./kagome-regular.woff2');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -28,7 +28,7 @@ If you wish to write to let me know how a certain font will be used, and for wha
 
 @font-face {
     font-family: 'carbontype';
-    src: url('./carbon-webfont.woff2') format('woff2');
+    src: url('./carbon-webfont.woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -48,7 +48,7 @@ Thankx and regards: Koczman Bálint (Cpr.Sparhelt)
 
 @font-face {
     font-family: 'top_secret';
-    src: url('./top_secret-webfont.woff2') format('woff2');
+    src: url('./top_secret-webfont.woff2');
     font-weight: normal;
     font-style: normal;
 }

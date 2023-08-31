@@ -15,3 +15,40 @@
     font-weight: normal;
     font-style: normal;
 }
+
+/* Carbontype */
+/*
+Vic Fieger License v1.00
+
+This license can also be found at this permalink: https://www.fontsquirrel.com/license/CarbonType
+
+The Vic Fieger fonts are freeware, to be downloaded and used by anyone who wants them for free. I didn’t put them here so people couldn’t use them! You don’t have to ask for my permission, though it’s always good to receive an e-mail from somebody to show me what they are using them for.
+If you wish to write to let me know how a certain font will be used, and for what purpose, send your e-mail to: vic@vicfieger.com
+*/
+
+@font-face {
+    font-family: 'carbontype';
+    src: url('carbon-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Top Secret */
+/* 
+Cpr.Sparhelt font License v1.00
+
+This license can also be found at this permalink: https://www.fontsquirrel.com/license/Top-Secret
+
+My Fonts Are free to use personal and commercial works to. But you can't sell them direktly.
+
+Please don't make illegal copies of th fonts.
+
+Thankx and regards: Koczman Bálint (Cpr.Sparhelt)
+*/
+
+@font-face {
+    font-family: 'top_secret';
+    src: url('top_secret-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
